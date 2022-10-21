@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      let arr = ['小姜禾','许青','米彩','五十铃','乐瑶','宋思思']
+      /*
+        push()
+            -向数组的末尾添加一个或多个元素，并返回新的长度
+        pop()
+            -删除并返回数组的最后一个元素
+        unshift()
+            -向数组的开头添加一个或多个元素，并返回新的长度
+        shift()
+            -删除并返回数组的第一个元素
+        splice()
+            -可以删除，添加，插入，替换数组中的元素
+            -参数：
+                1.删除的起始位置
+                2.删除的数量
+                3.要插入的元素
+
+            -返回值：
+                -返回被删除的元素
+        reverse()
+            -反转数组
+      
+      */ 
+      console.log(arr)
+      let result = arr.push('武舞','高诗诗')
+      // console.log(result)
+      console.log(arr)
+      result = arr.pop()
+      arr.pop()
+      // console.log(result)
+      console.log(arr)
+      arr = ['小姜禾','许青','米彩','五十铃','乐瑶','宋思思']
+      // result = arr.splice(1,3)
+      // arr.splice(1,1,'牛魔王','铁扇公主','红孩儿')
+      // arr.splice(1,0,'.....')
+      console.log(result)
+      console.log(arr)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

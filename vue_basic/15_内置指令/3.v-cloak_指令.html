@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-cloak指令</title>
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    v-cloak指令(没有值):
+        1.本质是一个特殊属性，vue实例创建完毕并接管容器后，会删掉v-cloak属性。
+        2.使用css配合v-cloak可以解决网速慢时页面展出{{xxx}}的问题
+   -->
+   <div id="root">
+     <h2 v-cloak>{{name}}</h2>
+   </div>
+   <script src="../js/vue.js"></script>
+</body>
+<script>
+  console.log(1)
+  new Vue({
+    el:'#root',
+    data:{
+      name:'尚硅谷',
+    }
+  })
+</script>
+</html>

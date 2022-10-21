@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1.表单有什么用？
+            收集用户信息。表单展现信息后，用户填写表单，点击提交按钮提交数据给服务器
+        2.怎样画一个表单？
+            使用form标签画表单
+        3.一个网页当中可以有多个表单form
+        4.表单最终是要提交数据给服务器的，form标签有一个action属性，这个属性用来指定服务器地址
+            action属性用来指定数据提交给那个地址
+            action属性和超链接中的href属性一样，都可以向服务器发送请求(requst)
+        5.http://192.168.111.3:8080/oa/save 这是请求路径，表单提交数据最终提交给
+            192.168.111.3机器上的8080端口对应的软件
+    -->
+    <form action="http://192.168.111.3:8080/oa/save">
+        <!-- 画一个提交按钮，这个按钮可以提交表单 -->
+        <!-- 画按钮可以用input输入域，type="submit"的时候表示该按钮是一个提交按钮，具有提交表单的能力 -->
+        <!-- 对于按钮来说，按钮的value属性用来指定按钮上显示的文本信息 -->
+        <input type="submit" value="注册">
+        <!-- 这是一个普通按钮不具备提交表单的能力 -->
+        <input type="button" value="设置按钮上显示的文本">
+    </form>
+
+    <a href="http://www.baidu.com">百度</a>
+    <!-- 这个按钮和普通的超链接没什么太大的区别，(超链接和表单都可以向服务器发起请求，
+        只不过表单发送请求的同时可以携带数据) -->
+    <form action="http://www.baidu.com">
+        <input type="submit" value="百度">
+    </form>
+    <br>
+    <br>
+    <br>
+    <!-- 
+        表单是以什么格式提交数据给服务器的？
+            http://localhost:8080/jd/login?username=abc&userpwd=111
+            格式:action?name=value&name=value&name=value&name=value&name=value&name=value...
+            HTTP协议规定的，必须以这种格式进行提交给服务器
+
+        重点强调：表单写了name属性的，一律提交给服务器，如不想提交，就不写name属性即可
+        value的默认值是空字符串"",会将字符串提交给服务器，java得到的代码是：String username=""
+    -->
+    <form action="http://localhost:8080/jd/login">
+        用户名<input type="text"><br>
+        密码&nbsp;&nbsp;<input type="password"><br>
+        <input type="submit" value="登录">
+    </form>
+    <!-- 用表格的形式些表单 -->
+    <form action="http://localhost:8080/jd/login">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="usename"></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="passwword" name="userpwd"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="登录">
+                    <input type="reset" value="清空">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- 必须放到form标签里面 -->
+    <input type="reset" value="清空">
+</body>
+
+</html>

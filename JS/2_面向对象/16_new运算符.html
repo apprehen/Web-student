@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+        new 运算符是创建对象时要使用的运算符
+            - 使用new时，到底发生了那些事情
+
+            -当使用new去调用一个函数时，这个函数将会作为构造函数调用
+                使用调用函数时，将会发生这些事：
+                1.创建一个普通的JS对象(Object对象{}),为了方便，称其为新对象
+                2.将构造函数的prototype属性设置为新对象的原型
+                3.使用实参来执行构造函数，并且将新对象设置为函数中的this
+                4.如果构造函数返回的是一个非原始值，则该值会作为new运算的返回值返回 (千万不要这么做捏)
+                    如果构造函数的返回值是一个原始值或者没有指定返回值
+                      则新的对象将会作为返回值返回
+                      通常不会为构造函数指定返回值
+    */ 
+    function MyClass(){
+      // let newInstance = {}
+      // newInstance.__proto__=MyClass.prototype
+      // this----> newInstance
+      // return {name:'小姜禾'}
+    }
+    const mc = new MyClass()
+    console.log(mc)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+  background-color: #bfa;
+}
+/* 
+    css中的注释 内容会被解析到css文件中
+*/
+.box1 {
+  background-color: #bfa;
+}
+.box1 .box2 {
+  background-color: orange;
+}
+.box1 .box3 {
+  background-color: aquamarine;
+}
+.box1 .box3 .box4 {
+  background-color: red;
+}
+.box5 {
+  width: 100px;
+  color: #bfa;
+}
+.box6 {
+  width: 100px;
+  background-image: url("box6/1.jpg");
+}
+.box6 {
+  width: 400px;
+  height: 400px;
+}

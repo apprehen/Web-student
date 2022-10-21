@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1px" width="50%">
+        <!-- 注意事项
+        1.row合并的时候，删除“下面的”单元格
+        2.col合并的时候，没有要求
+        
+        -->
+        <tr>
+            <!-- <td>员工编号</td> 
+            <td>员工薪资</td>
+            <td>部门名称</td> -->
+            <!-- th标签也是单元格标签，比td多的是居中和加粗 -->
+            <th>员工编号</th>
+            <th>员工薪资</th>
+            <th>部门名称</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td rowspan='2'>6</td>
+            <!-- 后面的一个删掉然后将上下合并 -->
+        </tr>
+        <tr>
+            <td colspan="2">7</td>
+            <!-- <td>8</td> -->
+            <!-- <td>9</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

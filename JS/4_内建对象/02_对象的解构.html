@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      const obj = {name:'孙悟空',age:18,gender:'男'}
+      
+      // let {name,age,gender} = obj //声明变量同时解构对象
+      let name,age,gender
+      ;({name,age,gender} = obj)
+      let {adress} = obj // 没有属性返回undefined
+
+      // console.log(name,age,gender)
+      let {name:a, age:b, gender:c, address:d="花果山"} = obj
+      console.log(a,b,c,d)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

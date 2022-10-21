@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图捏</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        /* 
+            设置外部容器样式 重点在于开启定位
+        */
+        .container {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            /* overflow: hidden; */
+            left: 32%;
+            top: 50px;
+            /* background-color: #bfa; */
+        }
+
+        /* 设置容器下面的a超链接元素 重点在于开启定位 让元素在同一页面展开 */
+        .container li a {
+            /* 
+                让父元素开启定位之后
+                    其下面的兄弟元素开启绝对定位，都脱离文档流
+                    称从上到下依次盖住，但是可以设置层级关系让他们的
+                    位置发生变化
+            */
+            position: absolute;
+        }
+
+        /* 设置 不同的 a 层级关系 让其有先后顺序捏 */
+        .container li:nth-child(4) a {
+            z-index: 3;
+        }
+
+        /* 规定图片大小，注意只设置宽就部要设置高 */
+        .container li a img {
+            width: 600px;
+            border-radius: 5%;
+        }
+
+        /* 设置轮播图下面的小圆点 */
+        /* 
+            注意打开定位，这样z-index只能是同一层级之间的比较捏
+            都是position的时候设置z-index才有效果噢
+        */
+        .container ul.dot {
+            width: 140px;
+            height: 20px;
+            /* background-color: red; */
+            position: absolute;
+            z-index: 999;
+            bottom: 15px;
+            left: 20px;
+        }
+        .container ul.dot li{
+            width: 15px;
+            height: 15px;
+            float: left;
+            background-color: rgb(217,217,217);
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .container ul.dot li:hover{
+            background-color: rgb(255,254,254);
+            transition: 0.25s;
+            /* transform: scale(1.2); */
+            border: 4px rgb(217,217,217) solid;
+            /* 
+                不知道怎么让其为中兴放大 而且移入后会有变大情况不会处理
+            */
+            width: 13px;
+            height: 13px;
+        }
+        .container ul.dot li:nth-child(4){
+            background-color: rgb(255,254,254);
+            border: 4px rgb(217,217,217) solid;
+            width: 13px;
+            height: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="container">
+        <li><a href="#"><img src="../img/03.jpg"></a></li>
+        <li><a href="#"><img src="../img/04.jpg"></a></li>
+        <li><a href="#"><img src="../img/05.jpg"></a></li>
+        <li><a href="#"><img src="../img/07.png"></a></li>
+        <li><a href="#"><img src="../img/08.png"></a></li>
+        <ul class="dot">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </ul>
+</body>
+
+</html>

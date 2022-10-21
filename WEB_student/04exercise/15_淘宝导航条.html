@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav {
+            width: 80%;
+        }
+
+        .infor {
+            /* 设置为弹性容器 */
+            display: flex;
+            /* 必须要每个弹性元素有宽度后设置空白区域才有意义 */
+            justify-content: space-around;
+            /* background-color: #bfa; */
+        }
+
+        .nav .infor li {
+            width: 12%;
+            /* flex-grow: 1; */
+        }
+
+        img {
+            /* 设置图片宽度和父元素一样 */
+            width: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="infor">
+            <li><a href=""><img src="../img/px_w_equal/10.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/11.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/12.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/13.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/14.jpg"></a></li>
+        </ul>
+        <ul class="infor">
+            <li><a href=""><img src="../img/px_w_equal/15.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/16.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/17.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/18.jpg"></a></li>
+            <li><a href=""><img src="../img/px_w_equal/19.jpg"></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

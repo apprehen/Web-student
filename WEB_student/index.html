@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+        }
+
+        .header {
+            background-color: pink; 
+            overflow: hidden;
+            /*消除浮动*/
+            margin-bottom: 5px;
+            position: sticky;
+            top: 0px;
+        }
+
+        .cha {
+            width: 250px;
+            float: left;
+        }
+
+        .jia {
+            width: 250px;
+            float: left;
+        }
+
+        .shan {
+            width: 250px;
+            float: left;
+        }
+
+        .gai {
+            width: 250px;
+            float: left;
+        }
+
+        .booktable {
+            float: right;
+        }
+
+        .Lcard {
+            float: left;
+        }
+
+        th {
+            height: 35px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid pink;
+            padding: 10px;
+            margin-right: 50px;
+            /* 合并相邻的边框 */
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .booktable h1 {
+            color: aqua;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        a:hover {
+            color: red;
+        }
+        .test{
+            width: 500px;
+            height: 3000px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><small>
+            <%= msg %>
+        </small>
+    </h1>
+    <a href="login">退出登录</a>
+    <hr color="blue">
+    <div class="header">
+        <div class="cha">
+            <h4>查书</h4>
+            <h6>按书名查</h6>
+            <form action="/cha" method="POST">
+                <input type="text" placeholder="书名" name="id" autocomplete="off" required>
+                <input type="submit" value="查书">
+            </form>
+            <h6>按作者查</h6>
+            <form action="/cha" method="POST">
+                <input type="text" placeholder="作者" name="id" autocomplete="off" required>
+                <input type="submit" value="查书">
+            </form>
+        </div>
+        <div class="jia">
+            <h4>上架新书</h4>
+            <form action="/jia" method="POST">
+                <input type="text" placeholder="书号" name="bookno" autocomplete="off" required>
+                <input type="text" placeholder="书名" name="bookname" autocomplete="off" required>
+                <input type="text" placeholder="作者" name="bookauthor" autocomplete="off" required>
+                <input type="text" placeholder="出版社" name="bookph" autocomplete="off" required>
+                <input type="text" placeholder="价格" name="bookvalue" autocomplete="off" required>
+                <input type="textarea" placeholder="内容简介" name="bookcontent" autocomplete="off" required>
+                <input type="submit" value="上架">
+            </form>
+        </div>
+        <div class="shan">
+            <h6>下架书籍</h6>
+            <form action="/shan" method="POST">
+                <input type="text" placeholder="书号" name="bookno" autocomplete="off" required>
+                <input type="submit" value="下架">
+            </form>
+        </div>
+        <div class="gai">
+            <h4>更改图书信息</h4>
+            <form action="/gai" method="POST">
+                <input type="text" placeholder="书号" name="bookno" autocomplete="off" required>
+                <input type="text" placeholder="书名" name="bookname" autocomplete="off" required>
+                <input type="text" placeholder="作者" name="bookauthor" autocomplete="off" required>
+                <input type="text" placeholder="出版社" name="bookph" autocomplete="off" required>
+                <input type="text" placeholder="价格" name="bookvalue" autocomplete="off" required>
+                <input type="textarea" placeholder="内容简介" name="bookcontent" autocomplete="off" required>
+                <input type="submit" value="更改">
+            </form>
+        </div>
+    </div>
+    <hr color="skyblue">
+
+    <!-- 借书表 -->
+    <div class="Lcard">
+        <h2>借书情况</h2>
+        <table>
+            <tr>
+                <th>书号</th>
+                <th>书名</th>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>所在单位</th>
+                <th>职业</th>
+                <th>还书期限</th>
+            </tr>
+            <% for(var i=0;i < data.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= data[i].bookno %>
+                    </td>
+                    <td>
+                        <%= data[i].bookname %>
+                    </td>
+                    <td>
+                        <%= data[i].Sno %>
+                    </td>
+
+                    <td>
+                        <%= data[i].Sname %>
+                    </td>
+                    <td>
+                        <%= data[i].Saddress %>
+                    </td>
+                    <td>
+                        <%= data[i].Scareer %>
+                    </td>
+                    <td>
+                        <%= data[i].Rtime %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+    <!-- 图书表 -->
+
+    <div class="booktable">
+        <h1>图书馆</h1>
+        <table>
+            <tr>
+                <th>书号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>价格</th>
+                <th>内容简介</th>
+                <th>状态</th>
+            </tr>
+            <% for(var i=0;i < bookdata.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= bookdata[i].bookno %>
+                    </td>
+                    <td>
+                        <%= bookdata[i].bookname %>
+                    </td>
+                    <td>
+                        <%= bookdata[i].bookauthor %>
+                    </td>
+
+                    <td>
+                        <%= bookdata[i].bookph %>
+                    </td>
+                    <td>
+                        <%= bookdata[i].bookvalue %>
+                    </td>
+                    <td>
+                        <%= bookdata[i].bookcontent %>
+                    </td>
+                    <td>
+                        <%= bookdata[i].bookmsg %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+    <div class="test"></div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      function fn(){
+        /*
+            arguments
+                -arguments 是函数中又一个隐含参数
+                -arguments 是一个类数组对象(伪数组)
+                -arguments 是用来储存到arguments对象中
+                    无论用户是否定义形参，实参都会储存到arguments对象中
+                    可以通过该对象直接访问实参
+        */ 
+        console.log(arguments[2])
+        console.log(Array.isArray(arguments))
+        for(let i = 0; i<arguments.length; i++) {
+          console.log(arguments[i])
+        }
+      }
+      // fn(1,2,33)
+      function sum () {
+        //  通过arguments,可以不受参数数量的限制更加灵活的创建函数
+        let result = 0
+        for(let num of arguments) {
+          result += num
+        }
+        return result
+      }
+      /*
+          可变参数,在定义函数时可以将参数指定为可变参数
+              -可变参数可以接收任意数量实参，并将他们统一存储到一个数组中返回
+              -可变参数的作用和arguments基本是一致的，但是也具体有一些不同点
+                  1.可变参数的名字可以自己指定
+                  2.可变参数就是一个数组，可以直接使用数组的方法
+                  3.可变参数可以配合其他参数一起使用
+      */ 
+    function fn2(...args) {
+      console.log(args)
+    }
+    // fn2(1,2,3,4)
+    function sum2(...args){
+      return args.reduce((a,b)=> a+b,0)
+    }
+    function fn3 (a,b, ...args) {
+      console.log(args)
+    }
+    fn3('111',123,456,'Hello',true)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

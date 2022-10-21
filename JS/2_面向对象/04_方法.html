@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      class Person{
+        name="孙悟空"
+        // sayHello=()=>{}
+        // 添加方法的一种方式
+        sayHello(){
+          console.log('HHHHHHH~~~我是',this.name)
+        } //添加方法(实例方法) 实例方法中this就是当前实例
+        static test () {
+          console.log("我是静态方法")
+          // 静态方法（类方法） 通过类来调用，静态方法中this指向的是当前类
+        }
+      }
+      const p1 = new Person()
+      console.log(p1)
+      p1.sayHello()
+      Person.test()
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

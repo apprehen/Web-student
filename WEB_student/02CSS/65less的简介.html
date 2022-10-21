@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html{
+        /* css原生也支持变量的设置 */
+        --color:#ff0;
+    }
+    .box1 {
+        /* calc()计算函数 */
+        width: calc(400px/2);
+        height: 200px;
+        background-color: var(--color);
+        float: left;
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        color: var(--color);
+        float: left;
+    }
+    .box3{
+        width: 200px;
+        height: 200px;
+        border: 10px solid var(--color);
+        float: left;
+    }
+</style>
+
+<body>
+    <!-- 
+        less是一门css的预处理语言
+            -less是一个css的增强版，通过less可以编写更少的代码实现更强大的样式
+            -在less中添加了许多的新特性，像对变量的支持，对muxin的支持... ...
+            -less的语法大体上和css语法一致，但是less中增添了许多对css的扩展
+                所以浏览器无法直接执行less代码，要执行必须向将less转换为css，然后再由浏览器执行
+    -->
+    <div class="box1">aaa</div>
+    <div class="box2">aaa</div>
+    <div class="box3">aaa</div>
+</body>
+
+</html>

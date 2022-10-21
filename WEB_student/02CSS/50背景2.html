@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .box1{
+            width: 700px;
+            height: 700px;
+            background-color: #bfa;
+            background-image: url(../img/04.jpg);
+            background-repeat: no-repeat;
+            padding: 10px;
+            /* border: 10px red double; */
+            /* 
+                设置背景范围
+                    background-clip
+                        可选值：
+                            border-box 默认值 背景会出现在边框的下边
+                            padding-box 背景不会出现在边框，只出现在内容去和内边距
+                            content-box 背景只会出现在内容区
+                    background-origin 背景图片的偏移量计算的原点
+                            padding-box 默认值：background-position从内边距处开始计算
+                            content-box 背景图片的偏移量从内容区处计算
+                            border-box 背景图片的变量从边框处开始计算
+            */
+            /* background-clip: content-box; */
+            /* background-origin: content-box; */
+            /* 
+                background-size 设置背景图片的大小
+                    第一个值表示宽度
+                    第二个值表示高度
+                    -如果只写一个，第二个值默认是auto
+
+                    cover 图片的比例不变，将元素铺满
+                    contain 图片的比例不变，将图片在元素中完整显示
+
+                background-attachement
+                    -背景图片是否跟随元素移动
+                    -可选值：
+                        scroll 默认值 背景图片会跟随元素移动
+                        fixed 背景元素会固定在页面中，不会随元素移动
+            */
+            background-size: contain;
+            /* 
+            background-color
+            background-image
+            background-repeat
+            background-position
+            background-size
+            background-origin
+            background-clip
+            background-attachment
+        
+            -background 背景相关的简写属性，所有背景相关的样式都可以通过该样式来设置 
+                并且该样式没有顺序要求，也没有必须要求写的
+
+                注意：
+                    background-size 必须写在position的后边，并且使用/隔开
+                    background-position/background-size
+
+                    background-origin background-clip 两个样式，orgin要在clip前面
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1"></div> -->
+</body>
+<script>
+    
+
+</script>
+
+</html>

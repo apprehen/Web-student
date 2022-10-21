@@ -1,0 +1,37 @@
+{
+  "id": "3194038",
+  "name": "taobaonav",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2210060",
+      "name": "导航",
+      "font_class": "daohang",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "3456452",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    },
+    {
+      "icon_id": "12134659",
+      "name": "收藏夹",
+      "font_class": "ef-shoucangjia-gongju",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "19266933",
+      "name": "向下",
+      "font_class": "xiangxia",
+      "unicode": "e749",
+      "unicode_decimal": 59209
+    }
+  ]
+}

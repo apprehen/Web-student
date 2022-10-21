@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影卡片捏</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <!-- 引入图标字体 -->
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.4-web/css/all.css">
+    <style>
+        /* 清除浮动影响
+         */
+        .clearfix::before,
+        .clearfix::after{
+            content: " ";
+            display: table;
+            clear: both;
+        }
+        /* 外部样式 */
+        .outer{
+            width: 375px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
+            margin: 100px auto;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .top{
+            width: 375px;
+            height: 230px;
+            background-image: url(../img/06.png);
+            border-bottom: 1px solid rgb(208,205,205);
+            background-size: 375px auto;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .introduce{
+            width: 375px;
+        }
+        .title{
+            margin: 20px;
+            color: rgb(113,123,134);
+            font-size: 24px;
+        }
+        /* 
+            父元素开启定位，之下的子元素好排列合适位置
+                不过最好是使用浮动去布局捏
+        */
+        .location{
+            position: relative;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        .location i{
+            position: absolute;
+            left: 30px;
+            top: -11px;
+            font-size: 16px;
+            color: rgb(172,170,170);
+        }
+        .location p{
+            position: absolute;
+            left: 50px;
+            top: -10px;
+            color: rgb(172,170,170);
+        }
+        /* 设置具体内容的样式为了能分开排列最好设置固定的高度和宽度 */
+        #information{
+            width: 285px;
+            margin-left: 28px;
+            margin-bottom: 40px;
+            font-size: 20px;
+            /* 设置行间距 */
+            line-height: 1.25;
+            color: rgb(172,170,170);
+        }
+        #evaluate{
+            border-top: 1px solid rgb(172,170,170);
+            position: relative;
+        }
+        
+        .star li{
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        .star li::before{
+            content: "★";
+            margin-left: 5px;
+        }
+        .star li:first-child{
+            margin-left: 25px;
+            color: rgb(0,128,0);
+
+        }
+        .star li:nth-child(2){
+            color: rgb(0,128,0);
+        }
+        #evaluate img{
+            width: 30px;
+            position: absolute;
+            right: 30px;
+            top: 18%;
+            border-radius: 50%;
+            color: rgb(172,170,170);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- 创建外部容器 -->
+    <div class="outer">
+        <!-- 创建头部的电影图片 -->
+        <header class="top"></header>
+        <!-- 创建电影的中间文字介绍 -->
+        <div class="introduce">
+            <!-- 大字说明 -->
+            <div class="title">Animation films</div>
+            <!-- 定位位置信息 -->
+            <div class="location">
+                <!-- 图标字体定位 -->
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Animations</p>
+            </div>
+            <!-- 具体评价 -->
+            <p id="information">Lorem  &nbsp;lpsum is simply dummy text of the printing & typesetting industry</p>
+        </div>
+        <!-- 创建尾部评分标准 -->
+        <footer id="evaluate" class="clearfix">
+            <ul class="star">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <img src="../img/facebook.png" class="facebook">
+        </footer>
+    </div>
+</body>
+
+</html>

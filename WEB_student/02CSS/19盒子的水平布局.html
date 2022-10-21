@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner {
+            /* width: auto; width的值默认就是auto */
+            height: 200px;
+            background-color: #bfa;
+            /* margin-right: 700px; */
+            margin-right: 300px;
+            /* 
+                元素的水平方向的布局：
+                    元素在其父元素中水平方向的位置由一下几个属性共同决定
+                        margin-left
+                        border-left
+                        padding-left
+                        width
+                        padding-right
+                        border-right
+                        margin-right
+
+                    一个元素在其父元素中，水平布局必须要满足一下的等式
+                margin-left+border-left+padding-left+width+padding-right+border-right+margin-right
+                =父元素的宽度(必须满足)
+                0 + 0 + 0 + 200 + 0 + 0 + "" = 800
+                    以上等式必须满足，如果相加结果使等式不成立，则称为过渡约束，则等式会自动调整
+                        -调整情况
+                            -如果七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足(可以存在负值)
+                    这七个值中有三个值可设置为auto
+                        width
+                        margin-left
+                        margin-right
+                        -如果某个值为auto 则会自动调整为auto的那个值以使等式成立
+                        -width 的auto 使用权最大捏
+                        -外边距的auto使用权相等捏  可以居中
+                        -如果两个外边距为auto，宽度固定值，则两个外边距的值相同(居中)
+                            使用我们经常利用这个特点来使一个元素在其父元素中水平居中
+                            示例：
+                                width:xxxpx
+                                margin:auto
+                            
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .box1{
+            width: 134px;
+            height: 134px;
+            background-image: url("../img/small_dinosaur.png");
+            margin: 50px auto;
+            animation: run 0.2s steps(6) infinite;
+        }
+        /* 设置关键帧 */
+        @keyframes run{
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -800px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

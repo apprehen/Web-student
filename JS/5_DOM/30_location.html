@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">CLICK ME</button>
+  <script>
+    const btn = document.querySelector(".btn")
+    btn.addEventListener("click",()=>{
+      /*
+          location 表示的是浏览器地址栏的信息
+              -可以直接location的值修改为一个新的地址，这样会使得网页发生跳转
+              -location.assign() 跳转到一个新的地址
+              -location.replace() 跳转到一个新的地址 (无法通过回退按钮回退)
+              -location.reload() 刷新页面，可以传递一个true来强制清缓存刷新
+              -location.href  获取当前地址
+      */ 
+      // console.log(location.href)
+      // location = "https://www.lilichao.com"
+      // location.assign("https://www.lilichao.com")
+      // location.replace("https://lilichao.com")
+      location.reload(true)
+    })
+  </script>
+</body>
+</html>

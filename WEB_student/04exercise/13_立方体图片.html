@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../02CSS/reset.css"> -->
+    <style>
+        body {
+            perspective: 800px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 100px auto;
+        }
+
+        .cube>div {
+            height: 200px;
+            width: 200px;
+            /* 为元素设置透明效果 */
+            opacity: 0.7;
+            position: absolute;
+        }
+
+        img {
+            height: 200px;
+            vertical-align: top;
+        }
+
+        .box1 {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box2 {
+            transform: translateZ(100px) rotateY(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="box1">
+            <img src="../img/px_w_equal/1.jpg">
+        </div>
+        <div class="box2">
+            <img src="../img/px_w_equal/2.jpg">
+        </div>
+        <div class="box3">
+            <!-- <img src="../img/px_w_equal/3.jpg"> -->
+        </div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+</body>
+
+</html>

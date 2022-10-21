@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* 
+                浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围
+                    所有我们可以利用浮动来设置文字环绕图片的效果
+            */
+            float: left;
+        }
+
+        .box2 {
+            background-color: yellow;
+            float: left;
+            /* 
+                元素设置浮动以后，将会从文档流中脱离，从文档流中脱离后，元素的一些特点也会发生变化
+                
+                脱离文档流的特点
+                    块元素：
+                        1.块元素不在独占一行
+                        2.脱离文档流以后，块元素的宽度和高度默认都被内容撑开
+
+                    行内元素：
+                        行内元素脱离文档流以后会变成块元素，特点和块元素一样
+
+                    脱离文档流以后，不需要再区分块和行内了
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1"></div> -->
+    <!-- <p> -->
+    <!-- Life is short,if you are alive,there is something;if you are gone ,there is no thing , -->
+    <!-- so try to open your mind and don`t get in to dead end no matters what happens -->
+    <!-- </p> -->
+    <div class="box2">Hello</div>
+</body>
+
+</html>

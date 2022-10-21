@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      /*
+          定时器的本质，就是在指定时间后将函数添加到消息队列中
+      */ 
+      // console.time()
+      // setTimeout(()=>{
+      //   console.timeEnd()
+      //   console.log("定时器执行了~~")
+      // },3000)
+      // // 使程序卡6s
+      // const begin = Date.now()
+      // while (Date.now()-begin < 6000) {}
+
+      /*
+          setInterval() 每间隔一段时间就将函数添加到消息队列中
+              但是如果函数执行的速度比较慢，它是无法确保每次执行的间隔都是一样的
+      */ 
+      // console.time("间隔")
+      // setInterval(() => {
+      //   console.timeEnd("间隔")
+      //   alert("定时器执行了~~")
+      //   console.time("间隔")
+      // }, 3000)
+
+      /*
+          希望可以确保函数每次执行都有相同间隔
+      */
+      setTimeout(function fn(){
+        console.log("函数执行了")
+        // 在setTimeout 的回调函数的最后，在调用一个setTimeout
+        setTimeout(fn,3000)
+      },3000)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          面向对象的特点：
+              封装，继承和多态
+          1.封装
+              -对象就是一个用来存储不同属性的容器
+              -对象不仅负责属性，还要负责数据的安全
+              -直接添加到对象中的属性，并不安全，因为他们可以被任意修改
+              -任何确保数据的安全
+                  1.私有化数据
+                      -将需要保护的数据设置为私有的，只能在类内部使用
+                  2.提供setter和getter方法来开放对数据的操作
+                      -属性设置私有，通过getter setter方法操作属性带来的好处
+                          1.可以控制属性的读写权限
+                          2.可以在方法中对属性的值进行验证
+              
+              -封装主要用来保证数据的安全
+              -实现封装的方式：
+                  1.属性私有化 加#
+                  2.通过getter和setter方法来操作属性
+                      get 属性名(){
+                        return this.#属性
+                      }
+
+                      set 属性名(参数){
+                        //可以加上验证逻辑
+                        this.#属性 = 参数
+                      }
+      */ 
+      class Person {
+        #address = '一千年前'// 实例使用#开头就变成了私有属性，私有属性只能类内部访问
+        #name
+        #age
+        #gender
+        constructor (name,age,gender) {
+          this.#name = name
+          this.#age = age
+          this.#gender = gender
+        }
+        sayHello () {
+          console.log(this.name,this.#address)
+        }
+        // gettter方法，用来读取属性
+        getName(){
+          return this.#name
+        }
+        // setter方法，用来设置属性
+        setName (name) {
+          this.#name = name
+        }
+        getAge () {
+          return this.#age
+        }
+        setAge (age) {
+          if(age >= 0)
+          this.#age = age
+        }
+        get gender(){
+          console.log('getter执行了捏')
+          return this.#gender
+        }
+        set gender (gender) {
+          console.log('setter执行了捏')
+          this.#gender = gender
+        }
+      }
+      const p1 = new Person('小姜禾',19,'女')
+      p1.setName('许青')
+      p1.gender = '男'
+      console.log(p1)
+      console.log(p1.gender);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

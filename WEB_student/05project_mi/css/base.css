@@ -1,0 +1,13 @@
+/* 公共样式 */
+.clearfix::before,
+.clearfix::after{
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    background-color: #fff;
+}

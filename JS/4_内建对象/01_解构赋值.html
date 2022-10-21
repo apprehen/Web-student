@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          解构赋值
+      */ 
+      
+      const arr = ['孙悟空','猪八戒','沙和尚']
+      let a,b,c
+      // a = arr[0]
+      // b = arr[1]
+      // c = arr[2]
+      ;[a,b,c] = arr // 解构赋值
+
+      let [d, e, f, g] = ['唐僧','白骨精','蜘蛛精','玉兔精'] //声明同时解构
+      console.log(d,e,f,g)
+      // ;[d,e,f = 77,g = 10] = [1,2,3]
+      ;[d, e, f, g = g] = [1,2,3]
+      console.log(d,e,f,g)
+      let [n1,n2,...n3] = [3,5,6,7,8] //  解构数组时，可以使用...来设置获取多余的元素
+      console.log(n1,n2,n3)
+      function fn(){
+        return ['二郎神','白大仙']
+      }
+      let [name1,name2] = fn()
+      //  可以通过解构赋值来快速交换两个变量的值
+      let a1 = 10
+      let a2 = 20
+      // let temp = a1
+      // a1 = a2
+      // a2 = a1
+      ;[a1,a2] = [a2,a1] // [20,10]
+      console.log('a1 =',a1)
+      console.log('a2 =',a2)
+      /*
+          数组中可以存储任意类型的数据，也可以存数组
+              如果一个数组中的元素还是数组，则这个数组我们称为二维数组
+      */
+      const arr3 = [['孙悟空',18,'男'],['猪八戒',19,'男']]
+        let [[name,age,gender],exp] =arr3
+        console.log(name,age,gender)
+        console.log(exp)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

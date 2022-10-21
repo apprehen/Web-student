@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="target.html">
+        <!-- 
+
+            autocomplete="off" 关闭自动补全
+            readonly 将表单项设置为只读,数据会提交
+            disable 将表单设置为禁用,数据不会提交
+            autofocus 设置表单项目自动获取焦点
+        -->
+        <input type="text" name="username" value="hello" readonly> 
+        <br>
+        <input type="text" name="username" value="hello" disabled> 
+        <br>
+        <input type="text" name="username" autocomplete="off"> 
+        <br>
+        <input type="text" name="username" autocomplete="on   "> 
+        <br>
+        <input type="color">
+        <br>
+        <input type="email">
+        <br>
+        <input type="submit">
+        <!-- 
+            普通按钮
+        -->
+        <input type="button" value="按钮">
+        <!-- 
+            重置按钮
+        -->
+        <input type="reset" value="重置">
+        <br>
+        <br>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data={
+            name:'尚硅谷',
+            address:'北京'
+        }
+        //加入中转变量
+        // let tmp='尚硅谷'
+        // setInterval(() => {
+        //     if(data.name!==tmp){
+        //         tmp = data.name
+        //         console.log('name被改了捏')
+        //     }
+        // },100)
+        // 陷入死循环
+        // Object.defineProperty(data,'name',{
+        //     get(){
+        //         return data.name
+        //     },
+        //     set(val){
+        //         data.name = val
+        //     }
+        // })
+        //创建一个监视的实例对象，用于监视data中属性的变化
+        const obs = new Observer(data)
+        console.log(obs)
+
+        //准备一个vm实例对象
+        let vm = {}
+        vm._data = data = obs
+        function Observer(obj){
+            //汇总对象中的所有的属性形成一个数组
+            const keys = Object.keys(obj)
+            //遍历
+            keys.forEach((k) => {
+                Object.defineProperty(this,k,{
+                    get(){
+                        return obj[k]
+                    },
+                    set(val){
+                        console.log("${k}被改动了，我要去解析模板，生成虚拟DOM....我要开始忙了")
+                        obj[k] = val
+                    }
+                })
+            })
+        }
+    </script>
+</body>
+</html>

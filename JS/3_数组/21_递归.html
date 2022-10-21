@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          递归
+              -调用自身的函数称为递归函数
+              -递归的作用和循环是基本一致的
+      */ 
+      
+      /* 
+          创建一个函数，可以用来求任意数的阶乘
+
+          如何用递归来解决阶乘的问题?
+          5!=4! x 5
+          4!=3! x 4
+          ...
+
+          递归的核心思想就是将一个大问题拆分成一个一个小的问题，小的问题解决了，大的问题....
+
+          编写递归函数,包含两个条件
+            1.基线条件 ———— 递归的终止条件
+            2.递归条件 ———— 如何对问题进行拆分
+
+          递归的作用....打死我也不想用
+       */
+      function jiecheng (num) {
+        let result = 1
+        for(let i = 2;i<=num;i++){
+          result *= i;
+        }
+        return result
+      }
+      let result = jiecheng(3)
+      function jiecheng2 (num) {
+        if(num===1){
+          return 1
+        }
+        // 递归条件
+        // num! = (num-1)! * num
+        return jiecheng2(num-1) * num
+      }
+      result = jiecheng2(5)
+      console.log(result)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

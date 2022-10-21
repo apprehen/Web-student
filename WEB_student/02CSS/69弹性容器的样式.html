@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .exp {
+            width: 800px;
+            border: 5px solid orange;
+            /* 设置ul为弹性容器 */
+            display: flex;
+            /* flex-direction: column; */
+            /* 
+                flex-wrap:
+                    设置弹性元素是否在弹性容器中自动换行
+                    可选值：
+                        nowrap 默认值，元素不会自动换行
+                        wrap 元素沿着辅轴方向自动换行
+                        wrap-reverse 元素沿着辅轴反方向换行
+            */
+            /* flex-wrap: wrap-reverse; */
+            /* flex-flow: wrap 和 direction的简写属性 */
+            /* flex-flow: row wrap; */
+            /* 
+                justify-content
+                    -如何分配主轴上的空白空间(主轴上的元素如何排列)
+                    -可选值:
+                        flex-start 元素沿着主轴起边排列
+                        flex-end 元素沿着主轴终边排列
+                        center 元素居中排列
+                        space-around 空白分布到元素的两侧
+                        space-between 空白均匀分布到元素间
+                        space-evenly 空白分布到元素的单侧
+            */
+            /* justify-content: center; */
+
+        }
+
+        .exp li {
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+        }
+
+        /* .exp li:first-child {} */
+
+        .exp li:nth-child(2) {
+            background-color: pink;
+        }
+
+        .exp li:last-child{
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="exp">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

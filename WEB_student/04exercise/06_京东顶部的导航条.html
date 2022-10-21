@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <link rel="stylesheet" href="../font/iconfont/iconfont.css">
+    <style>
+        /* 
+            设置整个容器
+        */
+        .outer {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(227, 228, 229);
+            margin-top: 80px;
+            position: relative;
+        }
+
+        /* 
+            设置左侧容器
+        */
+        .outer .login {
+            position: absolute;
+            left: 215px;
+            line-height: 40px;
+        }
+
+        /* 
+            设置图标字体
+        */
+        .outer .login i.iconfont {
+            color: red;
+            font-size: 20px;
+            float: left;
+        }
+
+        /* 
+            设置位置信息
+        */
+        .outer .login p {
+            float: left;
+            margin-left: 5px;
+            font-size: 4px;
+            color: rgb(143, 146, 146);
+        }
+
+        /* 
+            设置右侧容器
+        */
+        .outer .nav {
+            position: absolute;
+            font-size: 14px;
+            right: 215px;
+
+        }
+
+        /* 
+            为右侧容器里面的导航条设置浮动让其飘起来
+            此时应给li设置样式而不是a (超链接的点击范围)
+        */
+        .outer .nav li {
+            float: left;
+            color: rgb(143, 146, 146);
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            /* border: 1px red solid; */
+            text-align: center;
+        }
+
+        .outer .nav li:first-child {
+            width: 160px;
+        }
+
+        .outer .nav li:nth-child(5) a {
+            color: rgb(225, 37, 27);
+        }
+
+        .outer .nav li a:hover {
+            color: red;
+            transition: 0.25s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 结构
+            一个外部容器里面有两块横向导航条
+    -->
+    <div class="outer">
+        <div class="login">
+            <i class="iconfont">&#xe641;</i>
+            <p>北京</p>
+        </div>
+        <ul class="nav">
+            <li><a href="#">你好，请登录 免费注册</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li><a href="#">我的京东</a></li>
+            <li><a href="#">京东会员</a></li>
+            <li><a href="#">政策采购</a></li>
+            <li>客服服务</li>
+            <li>网站导航</li>
+            <li>手机京东</li>
+            <li><a href="#">网站无障碍</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

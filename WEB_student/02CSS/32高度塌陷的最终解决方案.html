@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .box1{
+            border: 10px red solid;
+            /* float: left; */
+            /* 开启元素的BFC 
+            overflow: hidden;*/
+
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            float: left;
+
+        }
+        /* 类似于下面的box3的作用，但是运用的是CSS
+            伪元素默认为行内元素，要display一下
+        */
+        .box1::after{
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .box3{
+            clear: both;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+
+</html>

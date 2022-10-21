@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          在开发中应该尽量减少直接在全局作用域中编写代码
+
+          所以我们的代码要尽量编写的局部作用域
+
+          如果使用let声明变量，可以使用{}来创建块作用域
+      */ 
+      {
+        let a = 10
+      }
+      {
+        let a = 20
+      }
+      // function fn () {
+      //   var a = 10
+      // }
+      // fn()
+      // function fn2 () {
+      //   var a = 20
+      // }
+      // fn2()
+      //希望可以创建一个只执行一次的匿名函数
+      /*
+          立即执行函数(IIFE)
+              --立即是一个匿名的函数，并它只会调用一次
+      */ 
+      (function () {
+        let a = 10
+        console.log('111')
+      })();
+      //(xxx)(xxx) JS解释器当成一个函数
+      (function () {
+        let a = 20
+        console.log('222')
+      })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

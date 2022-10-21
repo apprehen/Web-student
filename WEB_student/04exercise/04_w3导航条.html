@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航条</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        #container {
+            width: 1180px;
+            height: 55px;
+            /* background-color: orange; */
+            margin: 50px auto;
+            box-sizing: border-box;
+            background-color: rgb(232, 231, 227);
+        }
+
+        #container li {
+            float: left;
+            line-height: 55px;
+            height: 100%;
+            width: 180px;
+            /* margin-left: 20px; */
+            /* border: 1px solid red; */
+            /* 让在父元素内，让其子元素中文字在其中保持居中 */
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #container li:hover {
+            background-color: rgb(63, 63, 63);
+            color: rgb(230, 229, 225);
+            /* 
+                不足之处：
+                    不能在移入框中改变字体的颜色
+            */
+        }
+
+        #container li a:hover{
+            color: rgb(230, 229, 225);
+        }
+        /* 注意此时应该用更具体的表达来写选择器 不然会导致选择器的权重过低，不能改变样式 */
+        #container .teshu {
+            width: 100px;
+        }
+
+        /* #container li a{
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 创建导航条的结构 -->
+    <ul id="container">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li class="teshu"><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+
+</html>

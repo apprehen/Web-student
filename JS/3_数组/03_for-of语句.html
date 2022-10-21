@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          for-of语句可以用来遍历可迭代对象
+
+          语法：
+            for(变量 of 可迭代对象) {
+              语句。。。
+            }
+
+          执行流程：
+            for-of的循环体会执行多次，数组中有几个元素就会执行几次
+                每次执行时都会将一个元素赋值给变量
+      */ 
+      arr = ['小姜禾','许青','米彩','五十铃']
+      for (let value of arr) {
+        console.log(value)
+      }
+      for (let value of 'Hello') {
+        console.log(value)
+      }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* box-shadow 用来设置元素的阴影效果，阴影不会影响到页面的布局 
+                第一个值 左侧偏移量 设置阴影的水平位置 正值向右移动 负值向左移动
+                第二个值 垂直偏移量 设置阴影的水平位置 正值向下移动 负值向上移动
+                第三个值 阴影的模糊半径
+                第四个值 阴影颜色
+            
+            
+            */
+            box-shadow: 10px 10px salmon;
+            /* border: solid 5px red; */
+            /* outline: 10px red solid; */
+            /* 
+                outline 用来设置元素的轮廓线，用法和border一模一样
+                    轮廓和边框不同的电，就是轮廓不会影响到可见款的大小，不影响页面的布局
+            
+            */
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* border-radius 用来设置圆角 圆角设置的圆的半径大小 */
+            /* 
+            border-top-left-radius
+            border-top-right-radius
+            border-bottom-left-radius
+            border-bottom-right-radius
+            */
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1"></div>
+    -->
+    <!-- <div class="box2"></div> -->
+    <div class="box3"></div>
+</body>
+
+</html>

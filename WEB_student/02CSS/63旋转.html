@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 800px;
+            border: 1px red solid;
+            background-color: rgb(241,241,241);
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            /* background-color: #bfa; */
+            margin: 200px auto;
+            transition: 2s;
+            background-image: url("../06project_mi改正/img/dongman03.png");
+            background-size: cover;
+        }
+        body:hover .box1{
+            /* transform: rotateZ(1turn); */
+            /* transform: rotateX(45deg); */
+            /* transform: rotateY(180deg) translateZ(800px); */
+            /* 
+                通过旋转可以使元素沿着x，y 或 z 旋转指定角度
+            */
+            transform: rotateY(180deg);
+            /* 是否显示元素的背面 */
+            backface-visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        audio 标签用来向页面中引入一个外部的音频文件的
+            音视频文件引入时，默认情况不允许用户自己控制播放停止
+        属性
+            controls 是否允许用户控制播放
+            autoplay 音频文件是否自动播放
+                如果设置了autoplay，则音乐在打开页面时会自动播放
+                    但是目前大部分浏览器不会对音乐进行播放
+            loop 音乐是否循环播放
+    -->
+    <audio src="../source/qingtian.mp3" controls autoplay loop></audio>
+    <br>
+    <!-- 
+        除了通过src来指定外部文件的路径以外，还可以通过source来指定文件
+        用来考虑兼容性的问题
+    -->
+    <audio controls>
+        对不起，你的浏览器不支持播放音频，请升级浏览器
+        <source src="../source/qingtian.mp3">
+    </audio>
+    <!-- 
+        使用video标签引入视频音频文件
+            使用方式和audio一样
+    -->
+    <video controls>
+        <source src="../source/flowes.webm">
+        <source src="../source/flowes.mp4">
+    </video>
+</body>
+
+</html>

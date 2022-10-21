@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          箭头函数的返回值可以直接写在箭头后
+              如果直接在箭头后设置对象字面量为返回值时，对象字面量必须使用()括起来
+      */ 
+    const sum = (a,b) => a+b
+    const fn = () => ({name:'孙悟空'})
+    let result = sum(123,456)
+    console.log(result)
+    result = fn()
+    console.log(result)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

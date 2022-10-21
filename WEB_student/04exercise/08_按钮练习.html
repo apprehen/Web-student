@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-size: contain;
+            background-image: url("../img/03.jpg");
+            transition: 1s;
+        }
+        a:hover{
+            background-image: url("../img/04.jpg");
+            background-size: contain;
+            transition: 1s;
+        }
+        a:active{
+            background-image: url("../img/08.png");
+            background-size: contain;
+            transition: 1s;
+        }
+        /* 
+            图片属于网页中的外部资源，外部资源都需要浏览器单独发送请求加载
+                浏览器加载外部资源时是按需加载的，用则加载，不用则不加载
+                像我们上边的练习link会首先加载，而hover和active会在指定状态触发时才会加载
+                (怎样让用户有更加好的体验？)
+        */
+
+        /* 
+            解决图片闪烁的问题：
+                可以将多个小图片保持到一个大图片当中，然后调整background-position来显示响应的图片
+                这样图片会同时加载到网页中 就可以有效的避免出现闪烁的问题
+                这个技术在网页中应用十分广泛，被称为CSS-sprite 这种图我们称为雪碧图
+
+            雪碧图的使用步骤
+                1.先确定要使用的图标
+                2.测量图标的大小
+                3.根据测量结果创建一个元素
+                4.将雪碧图设置为元素的背景图片
+                5.设置一个偏移量以显示正确的图片
+            
+            雪碧图的特点：
+                一次性将多个图片加载进页面，降低请求的次数，加快访问速度，提升用户的体验
+        */
+    </style>
+
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>

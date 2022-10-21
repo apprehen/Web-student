@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改正后的轮播图捏</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        /* 设置图片的容器 */
+        .img-list {
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            /* left: 0px;
+            right: 0px;
+            top: 0px;
+            position: absolute; */
+            /* 
+                为ul开启相对定位，目的是使ul中的pointer可以相对于ul定位 而不是相对于初级包含块html定位
+            */
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        /* 
+            设置li，让图片都叠在一起
+        */
+        .img-list li {
+            position: absolute;
+        }
+
+        /* 通过修改元素的层级来显示指定的图片 */
+        .img-list li:nth-child(4) {
+            z-index: 1;
+        }
+
+        .img-list li a img {
+            width: 600px;
+        }
+
+        /* 设置导航点的样式噢 */
+        .pointer {
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 30px;
+
+        }
+
+        .img-list .pointer a {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            /* display: block; */
+            /* 设置元素向左浮动 */
+            float: left;
+            border-radius: 50%;
+            margin-left: 8px;
+            background-color: rgba(255, 255, 255, .6);
+        }
+
+        /* 
+            为小圆点设置outline 不占位置 不会偏移，只加一圈东西上去，你的不二之选
+        */
+        .img-list .pointer a:nth-child(4) {
+            background-color: #fff;
+            outline: 3px solid rgba(255, 255, 255, .6);
+        }
+
+        .img-list .pointer a:hover {
+            background-color: #fff;
+            outline: 3px solid rgba(255, 255, 255, .6);
+            transition: 0.25s;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img-list">
+        <li><a href="#"><img src="../img/03.jpg"></a></li>
+        <li><a href="#"><img src="../img/04.jpg"></a></li>
+        <li><a href="#"><img src="../img/05.jpg"></a></li>
+        <li><a href="#"><img src="../img/07.png"></a></li>
+        <li><a href="#"><img src="../img/08.png"></a></li>
+        <div class="pointer">
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+    </ul>
+</body>
+
+</html>

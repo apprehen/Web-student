@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <!-- 引入图标字体 -->
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.4-web/css/all.css">
+    <style>
+        /* 避免高度塌陷 */
+        .clearfix::before,
+        .clearfix::after {
+            display: table;
+            content: "";
+            clear: both;
+        }
+
+        .body {
+            font: 12px/1.5 Mircrosoft YaHei Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+
+        }
+
+        /* 设置外部容器 */
+        .top-bar-wrapper {
+            /* 跟屏幕一样宽 */
+            width: 100%;
+            /* 让元素垂直居中 */
+            line-height: 30px;
+            /* 设置下边框 */
+            border-bottom: 1px #ddd solid;
+            /* 设置背景颜色 */
+            background-color: #E3E4E5;
+        }
+
+        .top-bar-wrapper .top-bar {
+            /* 固定宽度 */
+            width: 1190px;
+            /* 水平居中 */
+            margin: 0px auto;
+            height: 30px;
+            position: relative;
+        }
+
+        .top-bar-wrapper .top-bar .location {
+            float: left;
+            font: 12px/1.5 Mircrosoft YaHei Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+            color: #999;
+            line-height: 30px;
+        }
+        .location .current-city
+        {
+            padding: 0px 8px;
+        }
+        .location .city-list{
+            height: 436px;
+            width: 320px;
+            background-color: white;
+            border: 1px solid rgb(204,204,204);
+            display: none;
+            /* 设置绝对定位，使其不占据页面的位置 */
+            position: absolute;
+            left: -1px;
+            z-index: 999;
+        }
+        .top-bar .location:hover .city-list{
+            display: block;
+        }
+        .top-bar .location:hover .current-city{
+            background-color: white;
+            outline:  1px solid rgb(204,204,204);
+        }
+
+        .top-bar-wrapper .top-bar .location .current-city i.fas {
+            color: #f10215;
+            font-size: 14px;
+        }
+
+        .top-bar li a.highlight {
+            color: #f10215
+        }
+
+        .top-bar a:hover {
+            color: #f10215;
+            transition: 0.25s;
+        }
+
+        .top-bar-wrapper .top-bar .short-cut {
+            float: right;
+        }
+
+        /* 设置分割线 */
+        .short-cut .line {
+            width: 1px;
+            height: 12px;
+            background-color: #999;
+            margin: 10px 12px 0px;
+        }
+
+        .short-cut li i.fas {
+            margin-left: 3px;
+        }
+
+        .top-bar-wrapper .top-bar .short-cut li {
+            float: left;
+            font: 12px/1.5 Mircrosoft YaHei Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+            color: #999;
+            line-height: 30px;
+        }
+
+        .top-bar-wrapper .top-bar .short-cut li span {
+            font: 12px/1.5 Mircrosoft YaHei Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创造外围容器-->
+    <div class="top-bar-wrapper">
+        <!-- 创造内部容器 -->
+        <div class="top-bar clearfix">
+            <!-- 创造左侧的菜单 -->
+            <div class="location">
+                <div class="current-city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:;">北京</a>
+                </div>
+                <div class="city-list"></div>
+            </div>
+            <!-- 右侧菜单 -->
+            <ul class="short-cut clearfix">
+                <li>
+                    <a href="javascript:;">你好,请登录</a>
+                    <a class="highlight" href="javascript:;">免费注册</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的订单</a></li>
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京东</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li><a href="javascript:;">京东会员</a></li>
+                <li class="line"></li>
+                <li>
+                    <a class="highlight" href="javascript:;">企业采购</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>客服服务</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>网站导航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li><span>手机京东</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

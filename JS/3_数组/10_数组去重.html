@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      const arr = [1,2,1,3,2,3,2,2,2,2,4,5,5,6,7]
+      //编写代码去除数组中的重复元素
+
+      //分别获取数组中的元素
+      for(let i = 0;i<arr.length;i++){
+        for(let j = i+1;j<arr.length;j++){
+          if(arr[j]===arr[i]){
+            arr.splice(j,1)
+            /*
+              当arr[i]和arr[j]相同时，自动删除j位置，j+1向前补位，不会重复比较
+
+              解决办法，当删除一个元素后，需要将该位置的元素在比较一遍
+            */ 
+            j--
+          }
+        }
+      }
+      console.log(arr);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

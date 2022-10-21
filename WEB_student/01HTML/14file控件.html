@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- file控件:上传文件专用. -->
+    <input type="file" name="" id="">
+    <form action="http://localhost:8080/os/save" method="post">
+        <!-- 隐藏域:网页上看不到,但是表单提交的时候数据会自动提交给服务器 -->
+        <input type="hidden" name="userid" value="111">
+        <p>用户代码</p>
+        <input type="text" name="usercode">
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+<script>
+    /*let age = prompt("请输入年份");
+    let name = (age) => {
+        if ((age % 4 == 0 && age % 100 != 0) || age % 400 == 0) {
+            alert('这是闰年');
+        }
+        else {
+            alert('这是平年');
+        }
+    }
+    console.log(name(age));*/
+    /*let age = prompt("请输入年份");
+    function name(age) {
+        if ((age % 4 == 0 && age % 100 != 0) || age % 400 == 0) {
+            alert('这是闰年');
+        }
+        else {
+            alert('这是平年');
+        }
+        return age;
+    }
+    console.log(name(age););
+*/
+</script>
+
+</html>

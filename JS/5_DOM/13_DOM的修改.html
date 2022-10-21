@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">CLICK ME</button>
+  <button id="btn2">CLICK ME TWO</button>
+  <hr>
+  <ul class="list">
+    <li class="swk">孙悟空</li>
+    <li class="shs">沙和尚</li>
+    <li class="zbj">猪八戒</li>
+  </ul>
+  <script>
+    /*
+        点击按钮后，向ul中添加一个唐僧
+    */ 
+    const list = document.querySelector('.list')
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click',()=>{
+      const li = document.createElement("li")
+      li.innerText = "唐僧"
+      li.id = 'ts'
+      // appendChild() 用于给一个节点添加子节点
+      // list.appendChild(li)
+      // insertAdjacentElement() 可以向元素的任意位置添加元素
+      // 两个参数: 1.要添加的位置  2.要添加的元素
+      // beforeend 标签的最后 afterbegin 标签的开始
+      // beforebegin 在元素的前边插入元素 (兄弟元素) afterend 在元素的后边插入元素 (兄弟元素)
+      list.insertAdjacentElement('afterend',li)
+      list.insertAdjacentHTML('beforeend', "<li id = 'bgj'>白骨精</li>")
+    })
+    const btn2 = document.querySelector("#btn2")
+    btn2.onclick=()=>{
+      //创建一个蜘蛛精替换孙悟空
+      const li = document.createElement("li")
+      li.innerText = "蜘蛛精"
+      li.id = "zzj"
+      // 获取swk
+      const swk = document.querySelector(".swk")
+      // replaceWith()  使用一个元素替换当前元素
+      // swk.replaceWith(li)
+
+      //remove() 方法用来删除当前元素
+      swk.remove()
+    }
+  </script>
+</body>
+</html>

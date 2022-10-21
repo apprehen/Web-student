@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置外部盒子 */
+        .container {
+            max-width: 300px;
+            margin: 50px auto;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 400px;
+            margin: 10px 0;
+            border: 1px solid #999;
+        }
+
+        label {
+            color: #999;
+            margin-left: 10px;
+        }
+
+        -----3lect,
+        textarea {
+            /* margin-left: 55px; */
+        }
+
+        input:required,
+        textarea:required {
+            border-right: 3px solid #a08;
+        }
+
+        input:optional,
+        select:optional {
+            border-right: 3px solid #999;
+        }
+
+        input:required+label::before                                                                                                              `         `                                                                             ` `1`12 r">
+        <form action="#">
+            <label>名称</label><input type="name" required>
+            <label>邮箱</label><input type="email" required>
+            <label>手机</label><input type="tel">
+            <label>网址</label><input type="url">
+            <select name="#">
+                <option value="1">HTML5</option>
+                <option value="2">CSS3</option>
+                <option value="3">javascript</option>
+                <option value="4">ajaix</option>
+                <option value="5">vue.js</option>
+            </select>
+            <textarea name="#" cols="30" rows="10" placeholder="留言" required></textarea>
+            <input type="submit" value="提交表单">
+        </form>
+    </div>
+</body>
+
+</html>

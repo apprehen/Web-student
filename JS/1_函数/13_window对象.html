@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          Window对象
+              -在浏览器中，浏览器为我们提供了一个Window对象，可以直接访问
+              -window对象代表的是浏览器窗口，通过该对象可以对浏览器窗口进行各种操作
+                  除此之外window对象还负责储存JS中的内置对象和浏览器宿主对象
+              -window对象的属性可以通过window对象访问，也可以直接访问
+              -函数就可以认为是window对象的方法
+      */ 
+      // alert('123')
+      // window.alert('123')
+      // window.console.log('哈哈')
+      window.a = 10 //向window对象中添加的属性会自动成为全局变量
+      // console.log(a)
+
+      /*
+          var 用来声明变量，作用和let相同，但是var不具有块作用域
+              --在全局中使用var声明的变量，都会作为window对象的属性保存
+              --使用function声明的函数，都会作为window的方法保存
+              --使用let声明的变量不会存储在window，而存在一个秘密的小地方
+              --var虽然没有块作用域，但是有函数作用域
+      */ 
+      var b = 20 // window.b = 20
+      function fn () {
+        alert('我是fn捏')
+      }
+      console.log(b)
+      console.log(window.b)
+      console.log(b===window.b)
+      // fn()
+      // window.fn()
+      let c = 33
+      console.log(window.c)
+      function fn2() {
+        // var d = 10 // var虽然没有块作用域，但有函数作用域
+        d = 10 // 在局部作用域中，如果没有使用 var 或 let 声明变量，则变量会自动成为window对象的属性 也就是全局变量
+      }
+      fn2 ()
+      console.log(d)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

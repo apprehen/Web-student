@@ -1,0 +1,223 @@
+.top-nav-wrapper{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(51,51,51);
+}
+/* 创建中间的导航条 */
+.top-nav{
+    height: 40px;
+    width: 82%;
+    margin: 0 auto;
+    line-height: 40px;
+    /* background-color: red ; */
+}
+/* 设置浮动让其横向排列 */
+.top-nav li{
+    float: left;
+}
+/* 注意此时移入就有超链接的显示,直接给超链接a设置样式就可以 */
+/* 
+    注意a是行内元素 要将其转化为块元素才能撑起li    
+*/
+.top-nav li a{
+    display: block;
+    color: rgb(176,176,176);
+    padding: 0 8px;
+}
+/* 设置鼠标的移入效果 */
+.top-nav li a:hover{
+    color: rgb(255,255,255);
+}
+/* 设置分割线 */
+li.line{
+    width:1px;
+    height:20px;
+    margin: 10px 3px;
+    background-color: rgb(66,66,66);
+}
+/* 设置最后一个特殊的元素 */
+.top-nav li:last-child{
+    background-color: rgb(66,66,66);
+    width: 103.3px;
+
+}
+/* 最后一个元素比较特殊 单独设置 */
+.top-nav li:last-child a{
+    padding-left: 12px;
+}
+.top-nav li:last-child a:hover{
+    color: rgb(255,103,0);
+    background-color: #fff;
+}
+/* ---------------------------------------------------- */
+/* 设置头部样式 */
+.header-wrapper{
+    width: 100%;
+    height: 125px;
+}
+.header{
+    width: 82%;
+    /* height: 90px; */
+    height: 125px;
+    margin: 0 auto;
+    /* background-color: red; */
+    line-height: 125px;
+}
+.header .mi-logo{
+    float: left;
+    width: 60px;
+    margin-top: 30px;
+    margin-left: 2px;
+    border-radius: 18px;
+}
+.header .info-list li{
+    float: left;
+    color: rgb(51,51,51);
+    font-size: 16px;
+}
+.header .info-list li:first-child a{
+    margin-left: 170px;
+}
+.header .info-list li a{
+    display: block;
+    padding-left: 25px;
+    color: rgb(51,51,51);
+}
+.header .info-list li a:hover{
+    color: rgb(255,103,0);
+    transition: 0.25s;
+}
+.header .looking{
+    float: right;
+    /* background-color: royalblue; */
+    height: 125px;
+    position: relative;
+}
+.header .looking #search{
+    width: 290px;
+    height: 50px;
+    outline: rgb(224,224,224) solid 1px;
+    border: none;
+}
+.header .looking i.fa{
+    height: 49.5px;
+    width: 50px;
+    font-size: 20px;
+    color: rgb(97,97,97);
+    text-align: center;
+    line-height: 49px;
+    position: absolute;
+    margin-left: 1px;
+    top: 36px;
+    outline: rgb(224,224,224) 1px solid; 
+    right: 0px;
+}
+.header .looking i.fa a{
+    display: block;
+}
+.header .looking i.fa:hover{
+    color: white;
+    background-color: rgb(255,103,0);
+}
+/* ----------------------------------------------------------------- */
+/* 设置网页中间的部分 */
+.middle-wrapper{
+    width: 100%;
+    height: 500px;
+}
+.middle-wrapper .middle{
+    width: 82%;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid rgb(224,224,224);
+    /* background-color: red; */
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+/* 设置左边的样式 */
+.left-middle{
+    width: 19.8%;
+    height: 100%;
+    background-color: rgb(161,159,159);
+    float: left;
+}
+.left-middle li a{
+    margin-top: 8px;
+    font-size: 18px;
+    display: block;
+    width: 222.5px;
+    height: 40px;
+    color: rgb(255,255,255);
+    /* background-color: rgb(255,103,0); */
+    line-height: 40px;
+    box-sizing: content-box;
+    padding-left: 25px;
+}
+.left-middle li:first-child{
+    margin-top: 15px;
+}
+.left-middle li a::after{
+    content: ">";
+    float: right;
+    margin-right: 40px;
+    font-size: 25px;
+}
+.left-middle li a:hover{
+    background-color: rgb(255,103,0);
+    transition: 0.25s;
+}
+/* 设置右边的样式 */
+.right-middle{
+    float: right;
+    width: 80.2%;
+    height: 500px;
+    position: relative;
+}
+/* 设置放置轮播图的容器 */
+.img-info,
+.img-info li{
+    height: 500px;
+    width: 100%;
+}
+.img-info{
+    position: relative;
+}
+.img-info li{
+    position: absolute;
+}
+.img-info li:nth-child(1) a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/mi02.webp");
+    background-size: auto 500px;
+    background-repeat: no-repeat;
+    float: right;
+}
+.img-info li:nth-child(2) a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/mi01.jpg");
+    background-size: auto 500px;
+    background-repeat: no-repeat;
+    float: right;
+}
+.pointer{
+    position: absolute;
+    right: 180px;
+    bottom: 20px;
+}
+.pointer li{
+    width: 12px;
+    height: 12px;
+    background-color: rgb(247,247,247);
+    outline: solid 4px rgb(148,148,148);
+    float: left;
+    margin-left: 18px;
+    border-radius: 50%;
+}
+.pointer li:hover{
+    background-color: rgb(146,146,146);
+    outline-color: rgb(179,179,179);
+    transition: 0.25s;
+}

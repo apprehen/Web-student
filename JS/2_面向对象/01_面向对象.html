@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            面向对象编程(OOP)
+                1.程序是干嘛的？
+                    -程序就是对现实世界的抽象（照片就是对人的抽象）
+								2.对象是干嘛的？
+										-一个事物抽象到程序中后就变成了对象
+										-在程序的世界中，一切皆对象
+								3.面向对象的编程
+										-面向对象的编程指，程序中的所有操作都是通过对象来完成
+										-做任何事情之前都需要先找到它的对象，然后通过对象来完成各种操作
+        */
+			/*
+					心仪的人:小姜禾
+							-一个食物通常由两部分组成：数据和功能
+							-一个对象由两部分组成：属性和方法
+							-事物的数据到了对象中，体现为属性
+							-事物的功能到了对象中，体现为方法
+
+							-数据：
+									姓名
+									年龄
+									身高
+									体重
+							-功能：
+									吃
+									睡
+									登徒子
+			*/  
+			const lovely = {
+				//添加属性
+				name:'小姜禾',
+				age:19,
+				height:168,
+				weight:98,
+				//添加方法
+				sleep () {
+					console.log(this.name + "睡觉了捏~~~");
+				},
+				eat () {
+					console.log(this.name + "吃饭了捏~~~");
+				}
+			}
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

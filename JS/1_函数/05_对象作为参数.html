@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function fn(a){
+      // console.log("a =",a)
+      // console.log(a.name)
+      a={} //修改变量时，只会影响当前的变量(重新指向)
+      a.name = "猪八戒"// 修改对象时，如果有其他变量指向该对象，则所有指向该对象的变量都会受到影响
+      console.log(a)
+    }
+    //对象可以作为参数传递
+    let obj = {
+      name:'孙悟空'
+    }
+    //传递实参时，传递并不是变量本身，而是变量中储存的值
+    // fn(obj)
+    // console.log(obj)
+
+    // 函数每次调用，都会重新创建默认值
+    function fn2 (a = {name:'沙和尚'}) {
+      console.log('a =',a)
+      a.name = "唐僧"
+      console.log('a =',a)
+    }
+    fn2()//沙和尚 唐僧
+    fn2()//沙和尚 唐僧(√) OR 唐僧 唐僧
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

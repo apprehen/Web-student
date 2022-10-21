@@ -1,0 +1,46 @@
+.box1 .box2 {
+  color: red;
+}
+.box1 > .box3 {
+  color: orange;
+}
+.box1 > .box3:hover {
+  color: blue;
+}
+.box1:hover {
+  color: aqua;
+}
+.p1,
+.p2 {
+  width: 100px;
+  height: 200px;
+}
+.p2 {
+  color: red;
+}
+.p3 {
+  width: 100px;
+  height: 200px;
+}
+.p5 {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
+div {
+  width: 900px;
+  height: 200px;
+  border: 1px solid red;
+}
+body {
+  background-color: #bfa;
+}
+body:hover {
+  background-color: #22aa00;
+}
+.box1 {
+  width: 200px;
+  height: 100px;
+  background-color: #bfa;
+}
+/*# sourceMappingURL=./other.css.map */

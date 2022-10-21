@@ -1,0 +1,99 @@
+//公共样式
+.w{
+    width: 80%;
+    margin: 0 auto;
+}
+.top-wrapper{
+    width: 100%;
+    .wrapper:extend(.w){
+        height: 79px;
+        border-bottom: 1px solid rgb(216,216,216);
+        //设置为弹性容器让内部元素水平排列
+        display: flex;
+        .logo{
+            height: 64px;
+            line-height: 64px;
+            width: 189px;
+            background-image: url("../img/1.png");
+            margin-top: 8px;
+        }
+        .location{
+            margin-top: 10px;
+            height: 79px;
+            width: 70px;
+            line-height: 79px;
+            font-size: 23px;
+        }
+        .top-list{
+            //设置弹性盒，让其水平排列
+            justify-content: space-between;
+            display: flex;
+            height: 79px;
+            width: 490px;
+            line-height: 79px;
+            li{
+                text-align: center;
+                a{
+                    height: 79px;
+                    width: 70px;
+                    display: block;
+                    font-size: 18px;
+                    color:rgb(51,51,51);
+                }
+            }
+            & li:first-child{
+                a{
+                    color: #fff;
+                    background-color: #ef4238;
+                }
+            }
+        }
+            
+            .download{
+                height: 100%;
+                width: 132px;
+                line-height: 79px;
+                display: flex;
+                margin-left: 15px;
+                i{
+                    line-height: 78px;
+                    display: block;
+                    margin-right: 7px;
+                    color: rgb(122,122,122);
+                }
+                p{
+                    font-size: 18px;
+                }
+            }      
+    }
+}
+.search-wrapper{
+    width: 220px;
+    line-height: 79px;
+    position: relative;
+    .search-input{
+        height: 40px;
+        width: 220px;
+        border: 1px solid #ccc;
+        // border: none;
+        border-radius: 30px;
+        background-color: #faf8fa;
+        box-sizing: border-box;
+        padding-left: 22px;
+        &:focus{
+            border: #ccc 1px solid;
+            outline: #ccc 1px solid;
+        }
+    }
+    .search-btn{
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        left:182px;
+        top: 20px;
+        border-color: #ccc;
+        color: white;
+        background-color: #ef4238;
+        border-radius: 40px;
+    }
+    }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        第二种方式(内部样式表)
+            -将样式编写到head中的style标签中
+                然后通过css选择器来选中元素并为其设置各种样式
+                可以同时为多个标签设置样式
+            -内部样式表更加方便对样式进行复用
+            -问题
+                我们的内部样式表只能对一个网页起作用
+                    它里面的样式不能跨页面复用
+    -->
+    <style>
+        /* 给所有的p元素都设置同一个样式 */
+        /* p {
+            color: royalblue;
+            font-size: 50px;
+        }*/
+    </style>
+    <!-- 
+        第三种方式(外部样式表) 最佳实践
+            -可以将css样式编写到一个外部的css文件中
+                然后通过link标签来引入外部的css文件
+            -外部样式表需要通过link标签进行引入
+                意味着只要想使用这些样式的网页都可以对其进行引用
+                使样式可以在不同页面之间进行复用
+            -将样式编写到外部的css文件中，可以使用到浏览器的缓存机制
+                从而加快网页的加载速度，提高用户的体验
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+        网页分为三个部分：
+            结构(HTML)
+            表现(CSS):外在显示的东西
+            行为(javascript)
+        css
+            -层叠样式
+            -网页实际上是一个多层结构，通过css可以分别为网页的每一个层来设置样式
+                而最终我们看到的只是网页的最上边一层
+                
+    -->
+    <!-- 
+        使用CSS来修改元素的样式
+
+        第一种方式(内联样式，行内样式)；
+            -在标签内部通过style属性来设置元素的样式(不推荐)
+            问题：
+                使用内联样式，样式只能对一个标签生效
+                样式发生变化的时候，修改非常不方便，不能维护
+                不能开发时使用
+    -->
+    <!-- <p style="color: red; font-size: 60px;">少小离家老大回，乡音未改鬓毛衰</p> -->
+    <!-- <p style="color: red; font-size: 60px;">今天天气真不错</p> -->
+    <p>落霞与孤鹜齐飞，秋水共长天一色</p>
+</body>
+
+</html>

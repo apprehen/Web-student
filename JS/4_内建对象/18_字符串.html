@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          split()
+              - 可以根据正则表达式来对一个字符串进行拆分
+          search()
+              -可以去搜索符合正则表达式的内容第一次在字符串中出现的位置
+          replace()
+              -根据正则表达式替换字符串中的指定内容
+          match()
+              -根据正则表达式去匹配字符串中符合要求的内容
+          matchAll()
+              -根据正则表达式去匹配字符串中符合要求的内容(必须设置g 全局匹配)
+              -它返回是一个迭代器
+      */
+      let str = 'a@b@c@d'
+      let result = str.split('@')
+      str = '孙悟空abc猪八戒adc沙和尚'
+      result = str.split(/a[bd]c/)
+      str = 'dfgedrhtfjh13715678903asdasdasdadd13872224501adfsefgwegfwef18268094597sfsdgfv'
+      result = str.search(/1[3-9]\d{9}/)
+      result = str.replace(/1[3-9]\d{9}/g,"哈哈哈")
+      result = str.match(/1[3-9]\d{9}/g)
+      result = str.matchAll(/1[3-9]\d{9}/g)
+      for(let item of result) {
+        console.log(item)  // 支持分组 
+      }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

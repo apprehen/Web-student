@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box1"></div>
+  <script>
+      /*
+          在DOM中，网页中所有的文本内容都是文本节点对象
+              可以通过元素来获取其中的文本节点对象，但是通常不这么做捏
+
+              我们可以直接通过元素去修改其中的文本
+                  修改文本的三个属性
+                      element.textContent 获取或修改元素中的文本内容
+                          --获取的是标签中的内容，不会考虑css样式
+
+                      element.innerText  获取或修改元素中的文本内容
+                          --innerText去读取CSS样式，会触发网页的重排(计算CSS样式)
+                          --当字符串中有标签时，会自动对标签就行转义
+
+                      element.innerHTML   获取或修改元素中的HTML代码
+                          --可以直接向元素中添加html代码
+                          --innerHTML插入内容时，有被xss注入的风险
+      */
+      const box1 = document.querySelector("#box1")
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1{
+      width: 100px;
+      height: 100px;
+      background-color: #bfa;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">点我一下</button>
+  <div class="box1"></div>
+  <script>
+    /*
+        点击按钮后，修改box1的宽度和高度和背景颜色
+    */ 
+    const btn = document.querySelector("#btn")
+    const box1 = document.querySelector(".box1")
+    btn.onclick = ()=>{
+      //修改box1的样式
+      //修改样式的方式：元素.style.样式名 = 样式值
+      //如果样式名中含有-，则需要将样式表修改为驼峰命名法
+      //background-color --> backg  roundColor
+      box1.style.width = "400px"
+      box1.style.height = "400px"
+      box1.style.backgroundColor = "yellow"
+    }
+  </script>
+</body>
+</html>

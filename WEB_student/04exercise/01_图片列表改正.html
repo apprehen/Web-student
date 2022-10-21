@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        /* 设置body的背景颜色 */
+        body {
+            background-color: antiquewhite;
+        }
+
+        /* 设置外部ul的样式 */
+        .img-list {
+            /* 设置ul宽度 高度 */
+            width: 190px;
+            height: 600px;
+            /* 裁剪溢出的内容 */
+            overflow: hidden;
+            /* 是ul在页面居中 */
+            margin: 50px auto;
+            background-color: #f4f4f4;
+
+        }
+
+        /* 设置li位置 */
+        .img-list li {
+            margin-bottom: 9px;
+        }
+
+        /* 设置图片的大小 */
+        .img-list img {
+            width: 100%;
+            border-radius: 5%;
+        }
+
+        /* 
+        写CSS时，按照样式顺序来写
+            ·结构层次更清晰，也好找到东西 
+        */
+    </style>
+</head>
+
+<body>
+    <ul class="img-list">
+        <li>
+            <a href="#">
+                <img src="../img/03.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../img/04.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../img/05.jpg">
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

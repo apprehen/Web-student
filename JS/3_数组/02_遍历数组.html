@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+      //  任何类型的值都可以成为数组中的元素
+      let arr = [1,'Hello',true,null,undefined,{name:'小姜禾'},()=>{}]
+      //  创建数组时尽量要确保数组中存储的数据的类型是相同
+      arr = ['小姜禾','许青','米彩','五十铃']
+      /*
+          遍历数组
+              -遍历数组简单理解，就是获取到数组中的每一个元素
+      */ 
+      // for(let i=0; i<arr.length; i++ ) {
+      //   console.log(arr[i])
+      // }
+      class Person {
+        constructor(name,age){
+          this.name = name
+          this.age =age
+        }
+      }
+      const personArr = [
+        new Person('小姜禾',18),
+        new Person('许青',19),
+        new Person('五十铃',17)
+      ]
+      for (let i = 0;i<personArr.length;i++) {
+        if(personArr[i].age<18){
+          console.log(personArr[i].name)
+        }
+      }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姓名案例_计算属性实现</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="firstname"><br>
+        名：<input type="text" v-model="lastname"><br>
+        全名：<span>{{fullname}}</span><br>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            firstname: '张',
+            lastname: '三'
+        },
+        computed: {
+            //完整写法
+            /*fullname: {
+                get() {
+                    console.log('get被调用了')
+                    return this.firstname + '-' + this.lastname
+                },
+                set(value) {
+                    console.log('set', value)
+                    const arr = value.split('-')
+                    this.firstname = arr[0]
+                    this.lastname = arr[1]
+                }
+            }*/
+            //简写
+            fullname() {
+                console.log('get被调用')
+                return this.firstname + '-' + this.lastname
+            }
+        }
+    })
+</script>
+
+</html>

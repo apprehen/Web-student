@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        用户注册：
+            用户名：
+            姓名：
+            密码：
+            确认密码：
+            性别：
+            兴趣爱好：
+            学历：
+            简介:
+        form表单method属性:
+            get:采用get方式提交时,用户提交的信息会显示在浏览器的地址栏上
+            post:采用post方法提交的时候,用户提交的信息不会显示在浏览器地址栏上
+            当用户含有敏感信息,例如密码时,采用post
+            默认为get请求
+            post提交的时候数据格式和get时一样的,只不过不在地址栏上显示
+
+    -->
+    <form action="http://localhost:8080/jd/register">
+        用户名
+        <input type="text" name="username">
+        <br>
+        密码
+        <input type="password" name="userpwd">
+        <br>
+        确认密码
+        <input type="password">
+        <br>
+        性别
+        <!-- 单选按钮的value必须手动写 -->
+        <input type="radio" name="gender" value="♂" checked>男
+        <input type="radio" name="gender" value="♀">女
+        <br>
+        兴趣爱好
+        <input type="checkbox" name="interest" value="smoke">抽烟
+        <input type="checkbox" name="interest" value="drink" checked>喝酒
+        <input type="checkbox" name="interest" value="fireHair">烫头
+        <br>
+        学历
+        <select name="grade">
+            <option value="gz">高中</option>
+            <option value="dz">大专</option>
+            <option value="bk" selected>本科</option>
+            <!--默认选中-->
+            <option value="ss">硕士</option>
+        </select>
+        <br>
+        简介
+        <textarea name="introduce" cols="60" rows="10"></textarea>
+        <br>
+        <input type="submit" value="注册">
+        <input type="reset" value="清空">
+    </form>
+    <!-- 
+        提交的数据
+            http://localhost:8080/jd/register?
+            username=%E5%91%A8%E9%BE%99%E8%8D%A3&userpwd=111&gender=%E2%99%82
+            &interest=smoke&interest=drink&interest=fireHair&grade=bk&
+            introduce=%E5%91%A8%E9%BE%99%E8%8D%A3+is+good+man
+    -->
+</body>
+
+</html>

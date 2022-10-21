@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航条</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        /* 设置nav的大小 */
+        .nav{
+            /* 设置高度和宽度 */
+            width: 1210px;
+            height: 48px;
+            /* 设置背景颜色 */
+            background-color: #E8E7E3;
+            /* 设置居中 */
+            margin: 100px auto;
+        }
+        .nav li{
+            /* 设置向左浮动,已使菜单横向排列 */
+            float: left;
+            /* 设置li高度 */
+            height: 48px;
+            /* 让文字在父元素中垂直居中 */
+            line-height: 48px;
+        }
+        /* 设置a的样式 */
+        /* 
+            a是行内元素,要想实现导航条的功能,应该占满li中的内容,不应该设置li的宽度和高度
+            应该设置a的高度和宽度
+        */
+        .nav li a{
+            /* 将a转化为块元素 */
+            float: left;
+            color: #777;
+            font-size: 18px;
+            /* 撑开a元素平均分布 */
+            padding: 0 39px;
+        }
+        .nav li a:last-child{
+            padding-right: 44.4px;
+            
+        }
+        /* 设置鼠标移入的效果 */
+        .nav li a:hover{
+            background-color: #3f3f3f;
+            color: #E8E7E3;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 
+        创建导航条的结构
+    -->
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1.注册界面灰色的提示
+            placeholder
+        2.html5中新增了那些类型
+            email,url,number,range,date,search,color,tel等
+        3.文本框中，输入一次，下一次在输入会自动提示是那个特性
+            autocomplete
+        4.下拉文本选择框
+            list和datalist
+        5.初始化页面之后，如何让input自动获得焦点？
+            autofocus
+        6.html5中如何设计表单元素必填？
+            required
+        7.html5表单验证如何使用正则？
+            pattern
+        8.html5表单中设置了必填，提交表单的时候如何做到不验证？
+            novalidata和formnovalidata
+    -->
+    <!-- enctype目的是选择输入的文件, 提交给后台-->
+    <form action="http://www.bilibili.com" method="post" enctype="multipart/form-data" autocomplete="on">
+        <input type="file">
+        <br>
+        <label for="">用户名</label>
+        <input type="text" name="username" id="username" placeholder="请输入用户名" required autofocus>
+        <br>
+        <label for="">工号&nbsp;&nbsp;</label>
+        <input type="text" name="worknumber" id="worknumber" placeholder="请输入工号" pattern="^\d{8}[imooc]$" required>
+        <!-- <input type="submit" formnovalidate=""> 不验证直接提交 -->
+        <input type="submit" value="登录">
+        <br>
+        <!-- 下拉选择 -->
+        <label for="">兴趣爱好</label>
+        <!-- label标签中for的作用是绑定表单中的某个元素与之对应，for和id对应 -->
+        <input type="text" list="tips">
+        <dataList id="tips">
+            <option value="抽烟"></option>
+            <option value="喝酒"></option>
+            <option value="烫头"></option>
+            <option value="AC"></option>
+        </dataList>
+    </form>
+</body>
+
+</html>

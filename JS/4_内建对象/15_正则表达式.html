@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          量词
+              {m} 正好m个
+              {m,} 至少m个
+              {m,n} m-n个
+              + 一个以上，相当于{1,}
+              * 任意数量的a
+              ? 0-1次 {0,1}
+      */
+      let re = /a{3}/
+      re = /^a{3}$/
+      re = /^(ab){3}$/
+      re = /^[a-z]{3}$/
+      re = /^[a-z]{1,}$/
+      re = /^[a-z]{1,3}$/
+      re = /^ba+$/
+      re = /^ba*$/
+      re = /^ba?$/
+      let result = re.test("baa")
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

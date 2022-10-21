@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      const arr = ['小姜禾','许青','米彩','五十铃','乐瑶','宋思思','五十铃']
+      // const arr2 = arr   //不是复制
+      // arr2[0] = 'Hello'
+      //  如何去复制一个对象 复制必须要产生新的对象
+      //  当调用slice时，会产生要给新的数组对象，从而完成对数组的复制
+      const arr3 = arr.slice()
+      arr3[0] = 'Helo'
+      // console.log(arr)
+      // console.log(arr2 === arr)
+      console.log(arr)
+      console.log(arr3)
+      console.log(arr === arr3)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

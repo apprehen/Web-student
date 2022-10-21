@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          Set
+              - Set用来创建一个集合
+              - 它的功能和数组类似，不同在于Set中永不能重复的数据
+
+          -使用方式
+              创建
+									- new Set()
+									- new Set(...[])
+							
+							方法
+									size 获取数量
+									add() 添加元素
+									has() 检查元素
+									delete() 删除元素
+      */
+			// 创建一个Set
+			const set = new Set()
+			//  向set中添加数据
+			set.add(10)
+			set.add("孙悟空")
+			set.add(10)
+			console.log(set)
+			// for (const item of set) {
+			// 	 console.log(item)
+			// }
+			const arr = [...set]
+			const arr2 = [1,1,1,2,3,4,5,5,6,6,9,9,8,7,7,3,5,6]
+			const newarr2 = [...new Set(arr2)]
+			console.log(newarr2)
+  </script>
+</head>
+<body>·
+  
+</body>
+</html>

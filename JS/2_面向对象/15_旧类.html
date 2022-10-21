@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          早期JS中，直接通过函数来定义类
+              - 一个函数如果直接调用 xxx() 这个函数就是一个普通函数
+              - 一个函数如果通过new调用 new xxx() 那么这个函数就是一个构造函数捏
+      */ 
+      /*
+          等价于：
+            class Person
+      */  
+      function Person (name,age) {
+        // 在构造函数中，this表示新建的对象
+        this.name = name
+        this.age = age
+
+        // this.sayHello = function () {
+        //   console.log(this.name)
+        // }
+      }
+      // 向原型中添加属性(方法)
+      Person.prototype.sayHello = () => {
+        console.log(this.name)
+      }
+      //静态属性
+      Person.staticProperty = 'xxx'
+      //静态方法
+      Person.staticMethod = function () {}
+      class MyClass{
+
+      }
+      const p = Person()
+      const p2 = new Person('小姜禾',18)
+      console.log(p2)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

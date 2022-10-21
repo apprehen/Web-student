@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易的新闻列表</title>
+    <link rel="stylesheet" href="../02CSS/reset.css">
+    <style>
+        /* 设置容器的样式 */
+        .new-wrapper {
+            width: 300px;
+            height: 365px;
+            /* 设置背景颜色，如果观察理解 */
+            /* background-color: orange; */
+            font-size: 14px;
+            /* 设置居中 */
+            margin: 50px auto;
+            border-top: 1px solid #ddd;
+        }
+
+        .news-img img {
+            width: 100%;
+            /* height: 232px; */
+        }
+
+        .news-title {
+            height: 40px;
+            font-size: 18px;
+            border-top: 1px solid red;
+            /* 为了边框和文字宽度一致，需要将新闻标题转化为行内块元素 */
+            display: inline-block;
+            /* 让h2往上移动将边框元素盖住 */
+            margin-top: -1px;
+            line-height: 40px;
+        }
+
+        .news-title a {
+            color: #40406B;
+            /*设置加粗 */
+            font-weight: bold;
+        }
+
+        /* 设置图片的文字效果 */
+        .information {
+            color: #fff;
+            /* 向上移动元素 */
+            font-family: bold;
+            margin-top: -25px;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        .news-list{
+            margin-top: 25px;
+        }
+        .news-list li{
+            margin-bottom: 15px;
+        }
+        .news-list li a{
+            font-size: 14px;
+            color: #666;
+        }
+        .news-list li a::before{
+            content: "😙";
+            padding-left: 10px;
+        }
+        .news-list li a:hover{
+            color: red;
+            transition: 0.25s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建新闻列表的外侧容器 -->
+    <div class="new-wrapper">
+        <!-- 创建一个标题标签 -->
+        <h2 class="news-title">
+            <a href="#">美少女捏</a>
+        </h2>
+        <!-- 创建一个图片的容器 -->
+        <div class="news-img">
+            <a href="#">
+                <img src="../img/06.png">
+                <!-- 创建图片的标题 -->
+                <div class="information">
+                    薇尔莉特首遇少佐，记事人偶的幸福生活
+                </div>
+            </a>
+        </div>
+        <!-- 新闻列表 -->
+        <ul class="news-list">
+            <li>
+                <a href="#">
+                    乔治:我爱LA 喜欢和LBJ一起打球
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    格林:3年前降薪就在等KD 特制T恤嘲讽LBJ
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    CBA下季新赛制:常规赛4组循环 增至46轮
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

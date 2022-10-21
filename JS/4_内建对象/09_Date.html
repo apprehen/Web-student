@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+          Date
+              -在JS中所有的时间相关的数据都有Date对象来表示
+              -对象的方法:
+                  getFullYear() 获取4位年份
+                  getMonth() 返回当前日期的月份(0~11)(索引)
+                  getDate() 返回当前是几日
+									getDay() 返回当前日期是周几(0~6)(0是周日)
+                  .....
+									getTime() 返回当前日期对象的时间戳
+											时间戳：自从 1970年一月一日0时0分0秒到当前时间所经历的毫秒数
+											计算机底层存储时间时，使用都是时间戳
+									Date.now() 获取当前的时间戳
+      */
+      let d = new Date() //直接通过new Date() 创建时间对象时，它创建的是当时的时间的对象
+      //  可以在Date() 的构造函数中，传递一个表示时间的字符串
+      //  字符串的格式：月/日/年 时:分:秒
+      //  年-月-日T时:分:秒
+      d = new Date("10/20/1998 12:22:33")
+      d = new Date()
+      let result = d.getFullYear()
+      result = d.getMonth()
+      result = d.getDate()
+      result = d.getDay()
+			result = d.getTime()
+      console.log(d)
+      console.log(result) //1663922126628
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
