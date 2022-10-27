@@ -21,5 +21,6 @@ import sum, {a,b,c} from './m4.mjs'
 // 通过 ES 模块化，导入的内容都是常量
 // es 模块都是运行在严格模式下的
 // ES 模块化在浏览器同样支持，但是一般不会去使用
+//        -- 通常结合着打包工具一起使用
 const result = sum(123,456)
 console.log(result)
