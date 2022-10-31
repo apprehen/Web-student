@@ -11,7 +11,7 @@
         install时发生了什么？
             1. 将包下载当前项目的node_modules目录下
             2. 会在package.json的dependencies属性中添加一个新属性
-                  "lodash": "^4.17.21"
+                "lodash": "^4.17.21"
             3. 会自动添加package-lock.json文件
                   帮助npm下载,不用管
       
