@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>嗨嗨嗨</h1>
+  <table border="1">
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>住址</td>
+      <td>性别</td>
+    </tr>
+      <% for(item of STUDENT_ARR) {%>
+        <tr>
+          <td><%=item.name%></td>
+          <td><%=item.age%></td>
+          <td><%=item.add%></td>
+          <td><%=item.gender%></td>
+        </tr>
+      <%}%>
+  </table>
+  <!-- console.log(STUDENT_ARR) -- 可以拿到数据 -->
+</body>
+</html>
