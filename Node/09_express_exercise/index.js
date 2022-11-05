@@ -74,6 +74,8 @@ app.post("/add_student",(req,res)=>{
         1.点击小姜禾的修改连接
         2.跳转到一个路由
             - 这个路由会返回一个页面,页面中有一个表单,表单中显示孙悟空的各种信息
+        3.用户填写表单，点击按钮提交到一个新的路由
+            - 获取学生信息，并对信息进行修改
 */
 // 添加删除路由
 app.get("/delete",(req,res)=>{
@@ -89,9 +91,40 @@ app.get("/delete",(req,res)=>{
   })
 })
 
-// 添加修改路由
+// 添加修改路由,渲染修改ejs模板
 app.get("/update",(req,res)=>{
-  id = req.query
+  const id = +req.query.id
+  // 获取要修改的学生信息
+  const student = STUDENT_ARR.find((item)=> item.id === id)
+  res.render("update",{ student })
+})
+
+// 提交修改的路由
+app.post("/updateStu",(req,res)=>{
+  // const id = req.query.id
+  const id = +req.body.id
+  const updateStu = {
+    id,
+    name:req.body.name,
+    age: +req.body.age,
+    gender:req.body.gender,
+    address:req.body.address
+  }
+  // 修改学生信息
+  // 根据id获取学生对象
+  const student = STUDENT_ARR.find((item)=> item.id == id)
+  student.name = updateStu.name
+  student.age = updateStu.age
+  student.gender = updateStu.gender
+  student.address = updateStu.address
+  fs.writeFile(
+    path.resolve(__dirname,"./data/students.json"),
+    JSON.stringify(STUDENT_ARR)
+  ).then(()=>{
+    res.redirect("/students")
+  }).catch(()=>{
+    console.log("出错辣")
+  })
 })
 
 // 配置错误路由
