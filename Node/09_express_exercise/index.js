@@ -3,7 +3,7 @@ const path = require("node:path")
 const app = express()
 const fs = require("node:fs/promises")
 
-const STUDENT_ARR = require("./data/students.json")
+let STUDENT_ARR = require("./data/students.json")
 
 // 配置静态资源
 app.use(express.static(path.resolve(__dirname,'public')))
@@ -21,7 +21,7 @@ app.get("/students",(req,res)=>{
 
 // 处理添加路由
 app.post("/add_student",(req,res)=>{
-  const id = STUDENT_ARR.at(-1).id + 1
+  const id = STUDENT_ARR.at(-1) ? STUDENT_ARR.at(-1).id + 1: 1
   // 1.获取用户填写的信息
   const register = {
     id,
@@ -55,8 +55,32 @@ app.post("/add_student",(req,res)=>{
   // res.redirect("/students")
 })
 
-
-
+/*
+  删除功能:
+    - 点击删除链接后,删除当前数据
+    - 点击 xx 删除 ----> id 为 n 的学生
+    - 流程:
+        1.点击小姜禾的删除链接
+        2.向路由发送请求 (写一个路由)
+        3.路由怎么写
+            - 获取学生的id
+            - 删除id为n的学生
+            - 将数组重新写入文件中
+            - 重定向到学生列表页面
+*/
+// 添加删除路由
+app.get("/delete",(req,res)=>{
+  const id = + req.query.id
+  STUDENT_ARR = STUDENT_ARR.filter(stu=>stu.id !== id)
+  fs.writeFile(
+    path.resolve(__dirname,"./data/students.json"),
+    JSON.stringify(STUDENT_ARR)
+  ).then(()=>{
+    res.redirect("/students")
+  }).catch(()=>{
+    console.log("出错辣")
+  })
+})
 
 // 配置错误路由
 app.use((req,res)=>{
