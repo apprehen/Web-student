@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=h1, initial-scale=1.0">
+  <title>学生列表</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    th,td{
+      border: 1px #000 solid;
+      font-size: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+    caption{
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1>Hello EJS</h1> -->
+  <%# 这样ejs才能不报错捏%>
+  <table>
+    <caption>
+        学生列表
+    </caption>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>地址</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(const stu of stus) {%>
+        <tr>
+          <td><%=stu.id%></td>
+          <td><%=stu.name %></td>
+          <td><%=stu.age %></td>
+          <td><%=stu.gender %></td>
+          <td><%=stu.address %></td>
+          <td>
+            <a
+            onclick="return confirm('确定删除吗?')" 
+            href="/students/delete?id=<%=stu.id%>">删除</a>
+            <a href="/students/update?id=<%=stu.id%>">修改</a>
+          </td>
+        </tr>
+        <%}%>
+    </tbody>
+  </table>
+  <hr>
+  <form action="/students/add" method="post">
+    <div>
+      姓名：<input type="text" name="name">
+    </div>
+    <div>
+      年龄：<input type="number" name="age">
+    </div>
+    <div>
+      性别：<input type="radio" name="gender" value="♀">女
+      <input type="radio" name="gender" value="♂">男
+    </div>
+    <div>
+      地址：<input type="text" name="address">
+    </div>
+    <button type="submit">提交</button>
+  </form>
+</body>
+</html>
