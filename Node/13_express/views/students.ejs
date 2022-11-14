@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <!-- 
+        C:\Users\lilichao\Desktop\Node-Course\12_express\views\students.ejs
+
+        localhost:3000/students/list（虚拟路径）
+
+        localhost:3000/css/index.css
+
+        res.render("student")
+    
+    -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>学生列表</title>
+        <!-- <link rel="stylesheet" href="../css/index.css"> -->
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px #000 solid;
+                font-size: 20px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            caption {
+                font-size: 25px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <hr />
+        <% if(stus && stus.length > 0) { %>
+        <table>
+            <caption>
+                学生列表
+            </caption>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>地址</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% for(const stu of stus){ %>
+                <tr>
+                    <td><%=stu.id%></td>
+                    <td><%=stu.name %></td>
+                    <td><%=stu.age %></td>
+                    <td><%=stu.gender %></td>
+                    <td><%=stu.address %></td>
+                    <td>
+                        <a
+                            onclick="return confirm('确认删除吗？')"
+                            href="/students/delete?id=<%=stu.id%>"
+                            >删除</a
+                        >
+                        <a href="/students/to-update?id=<%=stu.id%>">修改</a>
+                    </td>
+                </tr>
+                <% }%>
+            </tbody>
+        </table>
+        <%}else{%>
+        <p>学生列表为空！</p>
+
+        <%}%>
+
+        <hr />
+
+        <form action="/students/add" method="post">
+            <div>姓名：<input type="text" name="name" /></div>
+            <div>
+                年龄：<input type="number" max="150" min="0" name="age" />
+            </div>
+            <div>
+                性别：<input type="radio" name="gender" value="男" /> 男
+                <input type="radio" name="gender" value="女" /> 女
+            </div>
+            <div>地址：<input type="text" name="address" /></div>
+            <div>
+                <button>添加</button>
+            </div>
+        </form>
+    </body>
+</html>
