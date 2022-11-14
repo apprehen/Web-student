@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>这是ejs模板</title>
+    </head>
+    <body>
+        <h1>Hello EJS 哈哈</h1>
+        <h2><%=name%> <%=age%> <%=gender%></h2>
+
+        <%# address %>
+
+        <%
+            //console.log(1111)
+        %>
+
+        <!-- 
+            通过它可以将render传递进来的数据直接在网页中显示出来
+        -->
+        <%=name %>
+
+        <form action="/set_name">
+            <input type="text" name="name" placeholder="请输入你的名字" />
+            <button>提交</button>
+        </form>
+
+        <% if(name === "孙悟空") {%>
+        <h2>大师兄来了</h2>
+        <%} else{%>
+        <h2>二师兄来了</h2>
+        <%}%>
+    </body>
+</html>
