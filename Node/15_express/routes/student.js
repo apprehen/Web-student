@@ -5,11 +5,12 @@ const fs = require("fs/promises")
 const path = require("path")
 
 router.use((req, res, next) => {
-    if (req.session.loginUser) {
-        next()
-    } else {
-        res.redirect("/")
-    }
+  console.log(req.session.loginUser)
+	if (req.session.loginUser) {
+		next()
+	} else {
+		res.redirect("/")
+	}
 })
 
 // 学生列表的路由

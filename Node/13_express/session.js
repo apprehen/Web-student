@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 // 设置session中间件
 app.use(
     session({
-        secret: "hello"
+        secret: "megumi"
     })
 )
 
@@ -52,17 +52,14 @@ app.get("/set", (req, res) => {
     */
 
     // console.log(req.session)
-    req.session.username = "sunwukong"
+    req.session.username = "megumi"
 
     res.send("查看session")
 })
 
 app.get("/get",(req, res) => {
-
     const username = req.session.username
-
     console.log(username)
-
     res.send("读取session")
 })
 

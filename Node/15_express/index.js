@@ -16,14 +16,9 @@ app.use(cookieParser())
 app.use(session({
     secret:"megumi",
 		store: new FileStore({
-			// path 用来指定存储路径
 			path: path.resolve(__dirname,'./sessions'),
-			// 指定加密
 			secret: 'megumi',
-			// session的最大闲置有效时间 秒 默认一小时
 			ttl:3600,
-			// 默认情况下，fileStore会间隔一小时，清除一次session对象
-			// reapInterval 用来指定清除session的间隔 单位默认s 默认一小时
 			reapInterval:3600
 		}),
 		cookie: {
@@ -31,49 +26,43 @@ app.use(session({
 		}
 }))
 
-/*
-  session 是服务器创建的一个对象，这个对象用来储存用户的信息
-		- 每一个session都会有一个唯一的id，session创建后id会以cookie的形式发送给浏览器
-	浏览器收到以后，每次访问都会将id发回，服务器中就可以根据id找到对应的session
-
-	id(cookie) --------> session 对象
-	session什么时候会失效？
-		第一种：浏览器的cookie没了
-		第二种：服务器中的session对象没了
-
-	express-session 默认是将session存储在内存中，所以服务器一旦重启session就失效辣
-		考虑使用session通常会对session进行一个持久化的操作(写到文件中或者数据库里)
-	
-	如果将session存储到文件中
-		- 需要引入一个中间件 session-file-store
-		- 使用步骤：
-				1.安装
-					yarn add session-file-store
-				2.引入
-					const FileStore = require("session-file-store")(session)
-				3.设置为中间件
-				app.use(session({
-						secret:"megumi",
-						store: new FileStore({})
-				}))
-*/ 
-
 app.use("/students", require("./routes/student"))
+
+/*
+	- 跨站请求伪造
+	http://localhost:3000/student/delete?id=3
+	- 现在大部分的浏览器的都不会再跨域的情况下自动发送cookie
+		这个设计就是为了避免csrf攻击
+	- 如何解决
+		1.使用referer来检查请求的来源
+		2.使用验证码
+		3.尽量使用post请求(结合token)
+
+	- token(令牌)
+		- 可以在创建表单时随机生成一个令牌
+			然后将令牌存储到session中，并通过模板发送给用户
+			用户提交表单时，必须将token发回，才能进行后续操作
+			token可以使用随机(uuid)
+*/
 
 app.get("/", (req, res) => {
     res.render("login")
 })
 
 app.post("/login", (req, res) => {
-    // 获取用户的用户名和密码
-    const {username, password} = req.body
-    if(username === "admin" && password === "123123"){
-        // 登录成功后，将用户信息放入到session中
-        req.session.loginUser = username
-        res.redirect("/students/list")
-    }else{
-        res.send("用户名或密码错误")
-    }
+	// 获取用户的用户名和密码
+	const {username, password} = req.body
+	if(username === "admin" && password === "123123"){
+		// 登录成功后，将用户信息放入到session中
+		// 仅仅将loginUser添加到内存中session而没有将值写入文件中
+		req.session.loginUser = username
+		// 立刻存储
+		req.session.save(()=>{
+			res.redirect("/students/list")
+		})
+	}else{
+		res.send("用户名或密码错误")
+	}
 })
 
 app.get("/logout",(req,res)=>{

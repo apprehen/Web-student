@@ -13,23 +13,23 @@ app.set("views", path.resolve(__dirname, "views"))
 app.use(express.static(path.resolve(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-app.use(session({
-    secret:"megumi",
-		store: new FileStore({
-			// path 用来指定存储路径
-			path: path.resolve(__dirname,'./sessions'),
-			// 指定加密
-			secret: 'megumi',
-			// session的最大闲置有效时间 秒 默认一小时
-			ttl:3600,
-			// 默认情况下，fileStore会间隔一小时，清除一次session对象
-			// reapInterval 用来指定清除session的间隔 单位默认s 默认一小时
-			reapInterval:3600
-		}),
-		cookie: {
-			maxAge: 1000 * 3600
-		}
-}))
+	app.use(session({
+			secret:"megumi",
+			store: new FileStore({
+				// path 用来指定存储路径
+				path: path.resolve(__dirname,'./sessions'),
+				// 指定加密
+				secret: 'megumi',
+				// session的最大闲置有效时间 秒 默认一小时
+				ttl:3600,
+				// 默认情况下，fileStore会间隔一小时，清除一次session对象
+				// reapInterval 用来指定清除session的间隔 单位默认s 默认一小时
+				reapInterval:3600
+			}),
+			cookie: {
+				maxAge: 1000 * 3600
+			}
+	}))
 
 /*
   session 是服务器创建的一个对象，这个对象用来储存用户的信息
