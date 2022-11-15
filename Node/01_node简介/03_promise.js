@@ -25,7 +25,14 @@
 //     reject('reject中捏捏捏')
 //   },2000)
 // })
-// console.log(promise)
+const promise = new Promise((resolve,reject)=>{
+  resolve("Explosion")
+  setTimeout(()=>{
+    resolve('我是setTimeout中的存储数据')
+  },2000)
+})
+console.log(promise)
+console.log(11)
 /*
     从Promise中读取数据
         - 可以通过Promise的实例方法then 来读取Promise中储存的数据
@@ -64,10 +71,10 @@
                 如果PromiseState变为fulfilled 则调用then的第一个回调函数
                 如果PromiseState变为rejected 则调用then的第二个回调函数
 */
-const promise2 = new Promise((resolve,reject)=>{
-  // resolve("hhh")
-  reject('xixi')
-})
+// const promise2 = new Promise((resolve,reject)=>{
+//   // resolve("hhh")
+//   reject('xixi')
+// })
 /*
     catch() 用法和then类似，但是只需要一个回调函数作为参数
         catch()中的回调函数只会在Promise被拒绝时才会被调用
@@ -79,6 +86,6 @@ const promise2 = new Promise((resolve,reject)=>{
         - 但是finally的回调函数中不会接受到数据
         - finally() 通常来编写一些无论成功与否都会执行代码
 */
-promise2.catch(reason=>{
-  console.log(222)
-})
+// promise2.catch(reason=>{
+//   console.log(222)
+// })

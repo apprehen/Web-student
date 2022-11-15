@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>AJAX测试</h1>
+  <hr>
+  <button id="btn">
+    点我加载数据
+  </button>
+  <script>
+    const btn = document.querySelector("#btn")
+    btn.onclick = ()=>{
+      // 创建一个xhr对象
+      const xhr = new XMLHttpRequest()
+      // 设置请求信息
+      xhr.open("get","http://localhost:3000/students")
+      // 发送请求
+      xhr.send()
+      // 读取响应信息
+      // console.log(xhr.response) //异步代码不能同步加载
+      xhr.onload = ()=> {
+        console.log(xhr.response)
+      }
+    }
+  </script>
+</body>
+</html>

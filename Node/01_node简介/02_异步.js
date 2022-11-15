@@ -34,31 +34,49 @@
                   promise 储存数据的方式比较特殊
                   这种特殊的方式使得Promise可以用来储存异步调用的数据
 */ 
-function sum(a,b,callback){
+// function sum(a,b,callback){
+//   setTimeout(()=>{
+//     callback(a+b)
+//   },500)
+// }
+// console.log("meigumi")
+
+// sum(123,456,result=>{
+//   sum(result,7,result=>{
+//     sum(result,8,result=>{
+//       sum(result,9,result=>{
+//         sum(result,10,result=>{
+//           sum(result,11,result=>{
+//             sum(result,12,result=>{
+//               sum(result,13,result=>{
+//                 sum(result,14,result=>{
+//                   console.log(result)
+//                 })
+//               })
+//             })
+//           })
+//         })
+//       })
+//     })
+//   })
+// })
+
+// console.log("explosion!!!")
+
+function sum (a,b,callback) {
   setTimeout(()=>{
     callback(a+b)
-  },500)
+  },300)
 }
-console.log("meigumi")
 
 sum(123,456,result=>{
-  sum(result,7,result=>{
-    sum(result,8,result=>{
-      sum(result,9,result=>{
-        sum(result,10,result=>{
-          sum(result,11,result=>{
-            sum(result,12,result=>{
-              sum(result,13,result=>{
-                sum(result,14,result=>{
-                  console.log(result)
-                })
-              })
-            })
-          })
-        })
+  sum(result,1,result=>{
+    sum(result,2,result=>{
+      sum(result,3,result=>{
+        //.....
+        console.log(result)
       })
     })
   })
 })
-
-console.log("explosion!!!")
+// console.log(result)
