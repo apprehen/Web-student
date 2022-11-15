@@ -43,6 +43,22 @@ app.use((req,res,next)=>{
   next()
 })
 
+app.post("/login",(req,res)=>{
+  console.log("有人在登陆捏")
+  const { username, password } = req.body
+  if(username === 'admin' && password == '123123') {
+    res.send({
+      status: 'ok',
+      data: {username, password}
+    })
+  } else {
+    res.status(403).send({
+      status: 'error',
+      data: '用户名或密码输出错误'
+    })
+  }
+})
+
 // 统一API
 // 定义学生信息的路由
 app.get("/students",(req,res)=>{

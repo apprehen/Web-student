@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>AJAX测试</h1>
+  <hr>
+  <button id="btn">
+    点我加载数据
+  </button>
+  <br>
+  <button id="btn2">
+    点我加载数据2
+  </button>
+  <div class="root"></div>
+  <script>
+    const btn = document.querySelector("#btn")
+    const btn2 = document.querySelector("#btn2")
+    btn.onclick = ()=>{
+      /*
+        fetch
+            - fetch是xhr的升级版,采用的是Promise API
+            - 作用和AJAX是一样的，但是使用起来更加友好
+            - fetch原生js支持这种ajax请求的方式
+      */ 
+      fetch("http://localhost:3000/students")
+        .then(res=>{
+          if(res.status === 200){
+            // res.json() 可以用来读取json格式的数据
+            return res.json()
+          } else {
+            throw new Error("加载失败")
+          }
+        })
+        .then(res=>{
+          console.log(res)
+        })
+        .catch((err)=>{
+          console.log("出错辣",err)
+        })
+    }
+    btn2.onclick = ()=>{
+      fetch("http://localhost:3000/students",{
+        method: 'POST',
+        headers: {
+          "Content-type": "application/json"
+        },
+        // 通过 body 去发送数据时，必须通过请求头来指定数据的类型
+        body: JSON.stringify({
+          name:"megumi",
+          age: 18,
+          gender: '♀',
+          address: "heart"
+        })
+      })
+    }
+  </script>
+</body>
+</html>
