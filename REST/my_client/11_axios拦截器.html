@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <script>
+    axios.defaults.baseURL = "http://localhost:3000"
+    // axios的拦截器可以对请求或响应进行拦截，在请求发送前和响应读取前处理数据
+    // 拦截器只对当前的实例有效
+    // 添加请求拦截器
+    axios.interceptors.request.use(
+      function (config) {
+        // config 表示axios的配置对象
+        // console.log()
+        // config.data.name = '啧啧啧'
+        // 可以对请求做一些配置
+        return config
+      },
+      function (error) {
+        return Promise.reject(error)
+      }
+    )
+    document.querySelector("#btn").onclick=()=>{
+      // 直接调用
+      axios({
+        method:'POST',
+        url:"students",
+        // 请求头
+        data: {
+          name:'megami',
+          age:18,
+          gender:"♀"
+        },
+        params:{
+          id:1,
+          name:'xxx'
+        },
+        timeout:10000,
+        transformRequest:[(data,headers)=>{
+          data.name = "xxx"
+          headers['Content-Type'] = "application/json"
+          return data
+        },(data,headers)=>{
+          // 最后一个函数必须返回一个字符串，才能使得数据有效
+          console.log(222)
+          return JSON.stringify(data)
+        }]
+      })
+      .then(result=>{
+        // axios 默认只会在响应状态为2xx时才会调用then
+        // result 是axios封装过
+        console.log(result.data)
+      })
+      .catch(err=>{
+        console.log("出错辣",err)
+      })
+    }
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 const express = require("express")
-
+const jwt = require("jsonwebtoken")
 const app = express()
 
 let STUDENT_ARR = [
@@ -47,9 +47,16 @@ app.post("/login",(req,res)=>{
   console.log("有人在登陆捏")
   const { username, password } = req.body
   if(username === 'admin' && password == '123123') {
+    // 登录成功生成token
+    const token = jwt.sign({
+      username:username,
+      password:password
+    }, "explosion",{
+      expiresIn: "1day"
+    })
     res.send({
       status: 'ok',
-      data: {username, password}
+      data: {token,nickname: 'megumi'}
     })
   } else {
     res.status(403).send({

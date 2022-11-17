@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <script>
+    document.querySelector("#btn").onclick=()=>{
+      // 直接调用
+      axios({
+        method:'POST',
+        url:"http://localhost:3000/students",
+        data: {
+          name:'megami',
+          age:18,
+          gender:"♀"
+        }
+      })
+      .then(result=>{
+        // axios 默认只会在响应状态为2xx时才会调用then
+        // result 是axios封装过
+        console.log(result.data)
+      })
+      .catch(err=>{
+        console.log("出错辣",err)
+      })
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 50%;
+            }
+
+            td,
+            th {
+                font-size: 20px;
+                text-align: center;
+                border: 1px solid #000;
+            }
+
+            caption {
+                font-size: 30px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root">
+            <h1>请登录以后再做操作</h1>
+            <h2 id="info"></h2>
+            <form>
+                <div>
+                    <input id="username" type="text" />
+                </div>
+                <div>
+                    <input id="password" type="password" />
+                </div>
+                <div>
+                    <button id="login-btn" type="button">登录</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            
+            /* 
+                问题：
+                    - 现在是登录以后直接将用户信息存储到了localStorage
+                    - 主要存在两个问题：
+                        1.数据安全问题
+                        2.服务器不知道你有没有登录
+            */
+
+            // 点击login-btn后实现登录功能
+            const loginBtn = document.getElementById("login-btn")
+            const root = document.getElementById("root")
+
+            function loadData() {
+                fetch("http://localhost:3000/students")
+                    .then((res) => {
+                        if (res.status === 200) {
+                            // res.json() 可以用来读取json格式的数据
+                            return res.json()
+                        } else {
+                            throw new Error("加载失败！")
+                        }
+                    })
+                    .then((res) => {
+                        // 获取到数据后，将数据渲染到页面中
+                        if (res.status === "ok") {
+                            // 创建一个table
+                            const dataDiv = document.getElementById("data")
+                            const table = document.createElement("table")
+                            dataDiv.appendChild(table)
+                            table.insertAdjacentHTML(
+                                "beforeend",
+                                "<caption>学生列表</caption>"
+                            )
+                            table.insertAdjacentHTML(
+                                "beforeend",
+                                `
+                                <thead>
+                                    <tr>
+                                        <th>学号</th>    
+                                        <th>姓名</th>    
+                                        <th>年龄</th>    
+                                        <th>性别</th>    
+                                        <th>地址</th>    
+                                    </tr> 
+                                </thead>
+                            `
+                            )
+
+                            const tbody = document.createElement("tbody")
+                            table.appendChild(tbody)
+
+                            // 遍历数据
+                            for (let stu of res.data) {
+                                tbody.insertAdjacentHTML(
+                                    "beforeend",
+                                    `
+                                    <tr>
+                                        <td>${stu.id}</td>    
+                                        <td>${stu.name}</td>    
+                                        <td>${stu.age}</td>    
+                                        <td>${stu.gender}</td>    
+                                        <td>${stu.address}</td>    
+                                    </tr>
+                                `
+                                )
+                            }
+                        }
+                    })
+                    .catch((err) => {
+                        console.log("出错了！", err)
+                    })
+            }
+
+            // 判断用户是否登录
+            if (localStorage.getItem("nickname")) {
+                // 用户已经登录
+                // 登录成功
+                root.innerHTML = `
+                            <h1>欢迎 ${localStorage.getItem(
+                                "nickname"
+                            )} 回来！</h1>
+                            <hr>
+                            <button id="load-btn" onclick="loadData()">加载数据</button>
+                            <hr>
+                            <div id="data"></div>
+                        `
+            } else {
+                loginBtn.onclick = () => {
+                    // 获取用户输入的用户名和密码
+                    const username = document
+                        .getElementById("username")
+                        .value.trim()
+                    const password = document
+                        .getElementById("password")
+                        .value.trim()
+
+                    // 调用fetch发送请求来完成登录
+                    fetch("http://localhost:3000/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        body: JSON.stringify({ username, password })
+                    })
+                        .then((res) => res.json())
+                        .then((res) => {
+                            if (res.status !== "ok") {
+                                throw new Error("用户名或密码错误")
+                            }
+
+                            // 登录成功以后，需要保持用户的登录的状态，需要将用户的信息存储到某个地方
+                            // 需要将用户信息存储到本地存储
+                            /* 
+                            所谓的本地存储就是指浏览器自身的存储空间，
+                                可以将用户的数据存储到浏览器内部
+                                sessionStorage 中存储的数据 页面一关闭就会丢失
+                                localStorage 存储的时间比较长
+                        */
+
+                            // sessionStorage
+                            // localStorage
+                            // console.log(res)
+                            // 登录成功，向本地存储中插入用户的信息
+                            localStorage.setItem("username", res.data.username)
+                            localStorage.setItem("userId", res.data.id)
+                            localStorage.setItem("nickname", res.data.nickname)
+
+                            // 登录成功
+                            root.innerHTML = `
+                            <h1>欢迎 ${res.data.nickname} 回来！</h1>
+                            <hr>
+                            <button id="load-btn" onclick="loadData()">加载数据</button>
+                            <hr>
+                            <div id="data"></div>
+                        `
+                        })
+                        .catch((err) => {
+                            console.log("出错了！", err)
+                            // 这里是登录失败
+                            document.getElementById("info").innerText =
+                                "用户名或密码错误"
+                        })
+                }
+            }
+        </script>
+    </body>
+</html>

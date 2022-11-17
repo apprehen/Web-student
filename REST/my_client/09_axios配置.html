@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <script>
+    document.querySelector("#btn").onclick=()=>{
+      // 直接调用
+      axios({
+        // 请求方法，默认是get
+        method:'POST',
+        // baseURL 指定服务器的根目录(路径的前缀)
+        baseURL:'http://localhost:3000',
+        // 请求地址
+        url:"students",
+        // 指定请求头
+        headers: {"Content-type":"application/json"},
+        // 请求头
+        data: {
+          name:'megami',
+          age:18,
+          gender:"♀"
+        },
+        // params 用来指定路径中的查询字符串
+        params:{
+          id:1,
+          name:'xxx'
+        },
+        // timeout 过期时间
+        timeout:10000,
+        // signal 用来种终止请求
+        // signal:AbortController,
+
+        // transformRequest 可以用来处理请求数据(data)
+        // 需要数组作为参数，数组可以接收多个函数，请求发送时多个函数会按照顺序执行
+        // 函数在执行时，会接收到两个参数data和headers
+        transformRequest:[(data,headers)=>{
+          // 在函数中对data和headers进行修改
+          data.name = "xxx"
+          headers['Content-Type'] = "application/json"
+          return data
+        },(data,headers)=>{
+          // 最后一个函数必须返回一个字符串，才能使得数据有效
+          console.log(222)
+          return JSON.stringify(data)
+        }]
+      })
+      .then(result=>{
+        // axios 默认只会在响应状态为2xx时才会调用then
+        // result 是axios封装过
+        console.log(result.data)
+      })
+      .catch(err=>{
+        console.log("出错辣",err)
+      })
+    }
+  </script>
+</body>
+</html>

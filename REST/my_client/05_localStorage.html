@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>本地存储的演示</h1>
+  <button id="btn01">存</button>
+  <button id="btn02">取</button>
+  <script>
+    const btn1 = document.querySelector("#btn01")
+    const btn2 = document.querySelector("#btn02")
+    btn01.onclick = ()=>{
+      // setItem() 用来存储数据
+      // getItem() 用来获取数据
+      // removeItem() 删除数据
+      // clear() 清空数据
+      // sessionStorage.setItem("name","megumi")
+      // sessionStorage.setItem("age","18")
+      // sessionStorage.setItem("gender","♀")
+      // sessionStorage.setItem("address","heart")
+      localStorage.setItem("name","megumi")
+    }
+    btn02.onclick = ()=>{
+      //getItem() 用来取数据
+      const name = sessionStorage.getItem("name")
+      console.log(name)
+    }
+  </script>
+</body>
+</html>

@@ -34,9 +34,19 @@
       .then(res=>res.json())
       .then(res=>{
         if (res.status === 'ok') {
+          console.log('成功了捏')
         } else {
           throw new Error("用户名或者密码错误")
         }
+        /*
+          登陆成功以后，需要保持用户的登录状态，需要将用户的信息存储到某个地方
+          需要将用户信息存储到本地存储
+
+            所谓本地存储就是指浏览器自身的存储空间
+              可以将用户的数据存储到浏览器内部
+              sessionStorage 中存储数据 页面一关就会丢失
+              localStorage 存储的时间比较长
+        */ 
         console.log(res)
       })
       .catch(err=>{
