@@ -42,11 +42,11 @@ console.log(11)
             通过 reject 储存的数据或者出现异常的时，会调用第二个函数返回
               可以在第二个函数中编写处理异常的代码 (expect)
 */
-// promise.then((result)=>{
-//   console.log('1',result)
-// },(reason)=>{
-//   console.log('2',reason)
-// })
+promise.then((result)=>{
+  console.log('1',result)
+},(reason)=>{
+  console.log('2',reason)
+})
 
 /*
     Promise 中维护了两个隐藏的属性
