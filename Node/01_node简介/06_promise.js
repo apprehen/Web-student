@@ -15,10 +15,10 @@ setTimeout(()=>{
 */
 
 Promise.resolve(1).then((result)=>{
-  // console.log(222) //第一种
-  // setTimeout(()=>{
-  //   console.log('我是pro中的settime')
-  // },0)
+  console.log(222) //第一种
+  setTimeout(()=>{
+    console.log('我是pro中的settime')
+  },0)
   Promise.resolve(1).then(()=>{
     console.log('微中微')
   })

@@ -52,21 +52,21 @@ async function fn3 () {
 /*
   如果async声明的函数中没用写 await 那么它里边就会依次
 */
-// async function fn4 () {
-//   console.log(1)
-//   console.log(2)
-//   console.log(3)
-// }
-// fn4()
-// console.log(4)
-// function fn5 () {
-//   return new Promise((resolve,reject)=>{
-//     console.log(1)
-//     console.log(2)
-//     console.log(3)
-//     resolve()
-//   })
-// }
+async function fn4 () {
+  console.log(1)
+  console.log(2)
+  console.log(3)
+}
+fn4()
+console.log(4)
+function fn5 () {
+  return new Promise((resolve,reject)=>{
+    console.log(1)
+    console.log(2)
+    console.log(3)
+    resolve()
+  })
+}
 // fn5() //fn4 === fn5
 
 async function fn4 () {
