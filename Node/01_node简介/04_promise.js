@@ -16,7 +16,7 @@ const promise = new Promise((resolve,reject)=>{
 promise
   .then(r => "嗨嗨嗨")
   .catch(r => {
-    throw new Error('报个错玩玩捏')
+    // throw new Error('报个错玩玩捏')
     console.log('异常处理',r)
     return '禾'
   })
