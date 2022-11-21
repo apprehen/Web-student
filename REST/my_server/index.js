@@ -71,7 +71,7 @@ app.post("/login",(req,res)=>{
 app.get("/students",(req,res)=>{
   // 设置响应头
   // 手动写死只能写一个
-  res.setHeader("Access-Control-Allow-Origin","http://127.0.0.1:5500")
+  // res.setHeader("Access-Control-Allow-Origin","http://127.0.0.1:5500")
   console.log("students收到get请求")
   res.send({
     status: 'ok',
