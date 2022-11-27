@@ -22,9 +22,10 @@
       }
       // fn(fn2)
       fn(function () {
-        console.log('我是匿名函数~')
+        console.log('我是匿名函数~') 
       })
       fn(()=>console.log('我是箭头函数~'))
+      fn(fn2)
   </script>
 </head>
 <body>
