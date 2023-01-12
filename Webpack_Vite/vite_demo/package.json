@@ -1,0 +1,15 @@
+{
+  "name": "vite_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^3.0.1",
+    "vite": "^4.0.4"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
