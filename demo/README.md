@@ -93,21 +93,21 @@ render:h => h(App)
     功能：用于增强Vue
     本质：包含install方法的一个对象，install的第一个参数是Vue，第二个以后的参数是插件使用者传递的数据。
     定义插件：
-      对象.install = function (Vue, options) {
-        //  1. 添加全局过滤器
-        Vue.filter(....)
+  对象.install = function (Vue, options) {
+    //  1. 添加全局过滤器
+    Vue.filter(....)
 
-        //  2.添加全局指令
-        Vue.directive(....)
+    //  2.添加全局指令
+    Vue.directive(....)
 
-        //  3.配置全局混入(合)
-        Vue.mixin(...)
+    //  3.配置全局混入(合)
+    Vue.mixin(...)
 
-        //  4.添加实例方法
-        Vue.prototype.$myMethod = function () {...}
-        Vue.prototype.$myMethod = xxx
-      }
-    使用插件:Vue.use()
+    //  4.添加实例方法
+    Vue.prototype.$myMethod = function () {...}
+    Vue.prototype.$myMethod = xxx
+  }
+使用插件:Vue.use()
 ##
 
 ## scoped样式
@@ -246,7 +246,7 @@ render:h => h(App)
   在vue.config.js中添加如下配置：
   ```js
     devServer:{
-      proxy:"http://localhost:5000"
+      proxy:"http://localhost:5000"·
     }
   ```
 说明：
@@ -418,7 +418,7 @@ render:h => h(App)
           //  console.log('mutations的JIA被调用辣',state,value)
           state.sum += value
         }
-       }
+        }
       <!-- 初始化数据 -->
       const state = { 
         sum:0
@@ -429,9 +429,9 @@ render:h => h(App)
         mutations,
         state
       })
-  2.组件中读取vuex中的数据:$store.state.sum
-  3.组件中修改vuex中的数据:$store.dispatch('actions中的方法名',数据) 或 $store.commit('mutation中的方法名',数据)
-    备注: 若没有网络请求或其他业务逻辑,组件中也可以越过actions，即不写dispatch,直接写commit
+2.组件中读取vuex中的数据:$store.state.sum
+3.组件中修改vuex中的数据:$store.dispatch('actions中的方法名',数据) 或 $store.commit('mutation中的方法名',数据)
+  备注: 若没有网络请求或其他业务逻辑,组件中也可以越过actions，即不写dispatch,直接写commit
 ##
 
 ## getters的使用
@@ -721,30 +721,30 @@ render:h => h(App)
   九.编程式路由导航
     1.作用:不借助<router-link>实现路由跳转,让路由跳转更加灵活
     2.具体编码:
-        //$router的两个API
-        this.$router.push({
-          name:'xiangqing',
-          params:{
-            id:xxx,
-            title:xxx
-          }
-        })
-        this.$router.replace({
-          name:'xiangqing',
-          params:{
-            id:xxx,
-            title:xxx
-          }
-        })
-        this.$router.forward()  //前进
-        this.$router.back() //后退
-        this.$router.go() //可前进也可后退
+      //$router的两个API
+      this.$router.push({
+        name:'xiangqing',
+        params:{
+          id:xxx,
+          title:xxx
+        }
+      })
+      this.$router.replace({
+        name:'xiangqing',
+        params:{
+          id:xxx,
+          title:xxx
+        }
+      })
+      this.$router.forward()  //前进
+      this.$router.back() //后退
+      this.$router.go() //可前进也可后退
   十.缓存路由组件
     1.作用：让不展示的路由组件保持挂载，不被销毁
     2.具体编码：
-        <keep-alive include="News">
-          <router-view></router-view>
-        </keep-alive>
+      <keep-alive include="News">
+        <router-view></router-view>
+      </keep-alive>
   十一.两个新的生命周期钩子
     1.作用：路由组件所独有的两个钩子，用于捕获路由组件的激活状态
     2.具体名字：
@@ -769,15 +769,15 @@ render:h => h(App)
         }
       })
 
-      //全局后置守卫：初始化时执行、每次路由切换后执行
-      router.afterEach((to,from)=>{
-        console.log('afterEach',to,from)
-        if(to.meta.title){ 
-          document.title = to.meta.title //修改网页的title
-        }else{
-          document.title = 'vue_test'
-        }
-      })
+    //全局后置守卫：初始化时执行、每次路由切换后执行
+    router.afterEach((to,from)=>{
+      console.log('afterEach',to,from)
+      if(to.meta.title){ 
+        document.title = to.meta.title //修改网页的title
+      }else{
+        document.title = 'vue_test'
+      }
+    })
     4.独享守卫：
       beforeEnter(to,from,next){
         console.log('beforeEnter',to,from)
@@ -793,12 +793,12 @@ render:h => h(App)
         }
       }
     5.组件内守卫
-      //进入守卫：通过路由规则，进入该组件时被调用
-      beforeRouteEnter (to, from, next) {
-      },  
-      //离开守卫：通过路由规则，离开该组件时被调用
-      beforeRouteLeave (to, from, next) {
-      }
+    //进入守卫：通过路由规则，进入该组件时被调用
+    beforeRouteEnter (to, from, next) {
+    },  
+    //离开守卫：通过路由规则，离开该组件时被调用
+    beforeRouteLeave (to, from, next) {
+    }
   十三.路由器的两种工作模式
     1.对于一个url来说，什么是hash值？—— #及其后面的内容就是hash值。
     2.hash值不会包含在 HTTP 请求中，即：hash值不会带给服务器。

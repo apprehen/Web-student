@@ -5,89 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./bundle.js"></script>
+  <script src="./js/vue.js"></script>
 </head>
 <body>
-  <form>
-    账号:<input type="text" id="username">
-    密码:<input type="password" id="password">
-    <button type="button" class="btn">提交</button>
-  </form>
-  <script>
-    // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    // function getCookie(cname)
-    //   {
-    //     var name = cname + "=";
-    //     var ca = document.cookie.split(';');
-    //     for(var i=0; i<ca.length; i++) 
-    //     {
-    //       var c = ca[i].trim();
-    //       if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-    //     }
-    //     return "";
-    //   }
-    // if(getCookie('username')==='admin') {
-    //   window.location.href = './result.html'
-    // }
-    // const btn = document.querySelector('.btn')
-    // btn.onclick = () => {
-    //   const username = document.querySelector("#username").value.trim()
-    //   const passWord = document.querySelector('#password').value.trim()
-    //   if (username == 'admin' && passWord == 'admin123') {
-    //     console.log('111')
-    //     document.cookie = `username = ${username}; expires = Thu, 18 Dec 2043 12:00:00 GMT`
-    //     // const result = getCookie('username')
-    //     // console.log(result)
-    //     window.location.href = './result.html'
-    //   }
-    // }
-    // 路径模块
-    const path = require('path')
-    // 存入文件模块
-    const fs = require('fs/promises')
-
-    // 从文件导入数据
-    let USER_ARR = require('./data/user.json')
-
-    // 写入文件函数
-    function ToFile () {
-      fs.writeFile(
-        path.resolve(__dirname,'./data/user.json'),
-        JSON.stringify(USER_ARR)
-        ).then(()=>{
-          console.log('存储成功')
-        })
-        .catch(()=>{
-          console.log('出错辣')
-        })
-    }
-
-    const btn = document.querySelector('.btn')
-    btn.onclick = () => {
-      const username = document.querySelector("#username").value.trim()
-      const passWord = document.querySelector('#password').value.trim()
-      // 做一下用户校验
-      const register = {
-        cookie: username,
-        username: username,
-        password: passWord
+  <div id="root">
+    <h1>{{name}}</h1>
+    <button @click="showinfo">点我提示信息(不传参)</button>
+    <button @click="showinfo2($event,18)">点我提示信息(传参)</button>
+  </div>
+<script>
+  const vm = new Vue({
+    el: '#root',
+    data () {
+      return {
+        name: 'gumisa'
       }
-      USER_ARR.push(register)
-      ToFile()
-      window.location.href = './result.html'
-      // if (username == 'admin' && passWord == 'admin123') {
-      //   // console.log('111')
-      //   document.cookie = `username = ${username}; expires = Thu, 18 Dec 2043 12:00:00 GMT`
-      //   const register = {
-      //     cookie: username,
-      //     username: username,
-      //     password: passWord
-      //   }
-      //   USER_ARR.push(register)
-      //   ToFile()
-      //   window.location.href = './result.html'
-      // }
+    },
+    methods: {
+      showinfo () {
+        alert(this.name)
+      },
+      showinfo2 (event,age) {
+        console.log(event,age)
+      }
     }
-  </script>
+  })
+</script>
 </body>
 </html>

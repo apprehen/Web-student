@@ -53,12 +53,12 @@
                     return this.firstname + '-' + this.lastname
                 },
                 //get什么时候调用？当fullName被修改时.
-                set(value) {
-                    console.log('set', value)
-                    const arr = value.split('-')
-                    this.firstname = arr[0]
-                    this.lastname = arr[1]
-                }
+                // set(value) {
+                //     console.log('set', value)
+                //     const arr = value.split('-')
+                //     this.firstname = arr[0]
+                //     this.lastname = arr[1]
+                // }
             }
         }
     })

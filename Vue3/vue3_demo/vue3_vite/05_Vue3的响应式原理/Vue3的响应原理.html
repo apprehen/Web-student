@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person = {
+      name: '张三',
+      age: 20
+    }
+    //#region 
+    //模拟Vue2中通过Object.defineProperty()方法来实现响应式
+    // let p = {}
+    // Object.defineProperty(p, 'name', {
+    //   get() { // 读取属性时触发
+    //     return person.name
+    //   },
+    //   set(val) {
+    //     console.log('set了，我要去更新界面了', val)
+    //     person.name = val
+    //   }
+    // })
+    // Object.defineProperty(p, 'age', {
+    //   get() { // 读取属性时触发
+    //     return person.age
+    //   },
+    //   set(val) {
+    //     console.log('set了，我要去更新界面了', val)
+    //     person.age = val
+    //   }
+    // })
+    //#endregion
+
+    //模拟Vue3中通过Proxy来实现响应式
+    let p = new Proxy(person, {
+      get(target, key) {
+        // return target[key]
+        return Reflect.get(target, key)
+      },
+      set(target, key, val) {
+        console.log('set了，我要去更新界面了', val)
+        // target[key] = val
+        Reflect.set(target, key, val)
+        // return 
+      },
+      deleteProperty(target, key) {
+        console.log('delete了，我要去更新界面了', key)
+        // return delete target[key]
+        return Reflect.deleteProperty(target, key)
+      }
+    })
+  </script>
+</body>
+</html>
